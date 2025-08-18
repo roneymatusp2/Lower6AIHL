@@ -406,18 +406,10 @@
                     <div class="syllabus-actions">
                         <button class="nav-btn" id="mark-visible-complete" type="button">Mark all visible as complete</button>
                         <button class="nav-btn" id="reset-completion" type="button" style="background: #6c757d;">Reset</button>
-                        <details class="cloud-sync">
-                            <summary>Sync with cloud (Supabase)</summary>
-                            <div style="margin-top: .5rem; display: grid; gap: .5rem;">
-                                <input type="hidden" id="spb-url" value="https://gjvtncdjcslnkfctqnfy.supabase.co" />
-                                <input type="hidden" id="spb-key" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdnRuY2RqY3NsbmtmY3RxbmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM5NzM0MDEsImV4cCI6MjA1OTU0OTQwMX0.AzALxUUvYLJJtDkvxt7efJ7bGxeKmzOs-fT5bQOndiU" />
-                                <div style="display:flex; gap:.5rem; align-items:center;">
-                                    <button class="nav-btn" id="spb-pull" type="button">Pull from cloud</button>
-                                    <button class="nav-btn" id="spb-push" type="button">Push to cloud</button>
-                                    <small id="spb-status" aria-live="polite"></small>
-                                </div>
-                            </div>
-                        </details>
+                        <!-- Hidden Supabase credentials for background sync only -->
+                        <input type="hidden" id="spb-url" value="https://gjvtncdjcslnkfctqnfy.supabase.co" />
+                        <input type="hidden" id="spb-key" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdnRuY2RqY3NsbmtmY3RxbmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM5NzM0MDEsImV4cCI6MjA1OTU0OTQwMX0.AzALxUUvYLJJtDkvxt7efJ7bGxeKmzOs-fT5bQOndiU" />
+                        <small id="spb-status" aria-live="polite" class="hidden"></small>
                         <label for="auto-mark" class="level-title" style="margin-left: auto; color: var(--primary-blue);">
                             <input type="checkbox" id="auto-mark" checked style="margin-right: 0.4rem;"> Auto-mark by date
                         </label>
@@ -428,7 +420,7 @@
                         <span><span class="legend-dot legend-current"></span>Current week</span>
                         <span><span class="legend-dot legend-completed"></span>Completed</span>
                     </div>
-                    <p class="syllabus-footnote">Progress is saved locally in your browser. Cloud sync is optional.</p>
+                    <p class="syllabus-footnote">Progress is saved locally in your browser.</p>
                 </div>
             </section>
 
