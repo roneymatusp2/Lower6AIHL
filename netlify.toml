@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+# Headers: permitir embeber no Microsoft Teams/SharePoint via frame-ancestors
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self' https://*.sharepoint.com https://*.microsoftonline.com https://*.teams.microsoft.com https://teams.microsoft.com;"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=3600"
+
+

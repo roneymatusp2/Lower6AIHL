@@ -1,0 +1,3013 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Mathematics AI HL – Complete L6 Course Plan 2025–2026 | St Paul's School</title>
+    <meta name="description" content="IB Mathematics AI HL L6 2025–2026: complete course plan, units, topics, and lesson timetable for St Paul's School.">
+    <meta property="og:title" content="IB Mathematics AI HL – L6 Course Plan 2025–2026">
+    <meta property="og:description" content="Complete units, topics, dates, and lesson timetable for the 2025–2026 academic year at St Paul's School.">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.1/dist/umd/supabase.min.js"></script>
+    <style>
+        :root {
+            --primary-blue: #001D31;
+            --primary-red: #820021;
+            --primary-green: #002718;
+            --accent-gold: #c49a00;
+            --light-bg: #f8f9fa;
+            --text-main: #212529;
+            --text-secondary: #6c757d;
+            --border-color: #dee2e6;
+            --shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .navigation {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 120px;
+            z-index: 90;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-red);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:focus-visible {
+            outline: 3px solid #ffbf47;
+            outline-offset: 2px;
+        }
+
+        .nav-btn[aria-current="true"] {
+            background: var(--primary-red);
+        }
+
+        .unit-section {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 140px;
+        }
+
+        .unit-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .unit-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .unit-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .lesson-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .lesson-table th {
+            background: var(--light-bg);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .lesson-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .lesson-table tbody tr:nth-child(odd) {
+            background: #fcfdff;
+        }
+
+        .lesson-date {
+            font-weight: bold;
+            color: var(--primary-red);
+            white-space: nowrap;
+        }
+
+        .syllabus-code {
+            display: inline-block;
+            background: #ffebed;
+            color: var(--primary-red);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .tok-box {
+            background: linear-gradient(135deg, #f3e5ff 0%, #e5f3ff 100%);
+            border-left: 4px solid var(--primary-green);
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .tok-box strong {
+            color: var(--primary-green);
+        }
+
+        .connections-box {
+            background: #fff9e6;
+            border-left: 4px solid var(--accent-gold);
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .textbook-ref {
+            background: var(--light-bg);
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .textbook-ref strong {
+            color: var(--primary-blue);
+        }
+
+        @media print {
+            @page { margin: 12mm; }
+            .navigation { display: none !important; }
+            .unit-section { page-break-inside: avoid; break-inside: avoid; }
+            .header { position: static !important; box-shadow: none; }
+            * { color: #000 !important; background: transparent !important; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .lesson-table {
+                font-size: 0.9rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
+
+            .unit-section {
+                overflow-x: auto;
+            }
+
+            .lesson-table {
+                min-width: 700px;
+            }
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            background: #fff;
+            color: #000;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+        }
+
+        .search {
+            background: white;
+            padding: 1rem;
+            margin: 1rem 0 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .search label { font-weight: 600; color: var(--primary-blue); margin-right: 0.75rem; }
+        .search input[type="search"] {
+            width: 100%;
+            max-width: 520px;
+            padding: 0.6rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .search small { color: var(--text-secondary); display: inline-block; margin-left: 0.5rem; }
+
+        .back-to-top {
+            color: #fff;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            float: right;
+        }
+
+        /* Syllabus dashboard */
+        .syllabus-dashboard {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .syllabus-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.5rem;
+        }
+        .syllabus-header h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .syllabus-meta { display: flex; gap: 2rem; font-size: 0.95rem; opacity: 0.95; flex-wrap: wrap; }
+        .syllabus-body { padding: 1rem 1.5rem 1.5rem 1.5rem; }
+        .syllabus-summary { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+        .progress-track { background: var(--light-bg); height: 12px; border-radius: 999px; overflow: hidden; }
+        .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-red), var(--accent-gold)); transition: width 0.6s ease; }
+        .syllabus-stats { color: var(--text-secondary); font-size: 0.95rem; }
+        .syllabus-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+        .syllabus-board { background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 0.75rem; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+        .topic-heading { margin: 0.25rem 0 0.25rem 0; color: var(--primary-blue); font-weight: 700; font-size: 1rem; letter-spacing: .2px; }
+        .level-title { color: var(--text-secondary); margin: 0.25rem 0 0.5rem 0; font-size: 0.9rem; font-weight: 600; }
+        .code-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 0.35rem; }
+        .code-pill { border: 1px solid rgba(0,0,0,0.08); background: #f8fafc; color: #0f172a; border-radius: 10px; padding: 0.55rem 0.4rem; height: 40px; font-weight: 700; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 0.88rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); cursor: pointer; transition: transform .1s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease, opacity .2s ease; }
+        .code-pill:hover, .code-pill:focus-visible { transform: translateY(-1px); outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+        .code-pill.completed { background: #e9f8f0; color: #0b6b3a; border-color: rgba(16,185,129,0.25); }
+        .code-pill.past { opacity: 0.85; }
+        .code-pill.current { background: #fff1c7; color: #7a4a00; border-color: #f59e0b; box-shadow: 0 0 0 0 rgba(245,158,11,.6), 0 6px 14px rgba(245,158,11,.25); transform: translateY(-1px) scale(1.02); animation: pulseGlow 1.6s ease-in-out infinite; }
+        .code-pill.tile--sl { background: #eef2ff; color: #3730a3; }
+        .code-pill.tile--hl { background: #ecfdf5; color: #065f46; }
+        @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 rgba(255,208,138,.8);} 70% { box-shadow: 0 0 0 8px rgba(255,208,138,0);} 100% { box-shadow: 0 0 0 0 rgba(255,208,138,0);} }
+        .code-legend { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; color: var(--text-secondary); font-size: 0.9rem; margin: 0.4rem 0 0.2rem 0; }
+        .legend-dot { width: 12px; height: 12px; border-radius: 999px; display: inline-block; margin-right: 0.4rem; border: 1px solid rgba(0,0,0,0.15); }
+        .legend-sl { background: #eef2ff; border-color: #c7d2fe; }
+        .legend-hl { background: #ecfdf5; border-color: #a7f3d0; }
+        .legend-current { background: #fde68a; border-color: #fbbf24; }
+        .legend-completed { background: #bbf7d0; border-color: #34d399; }
+
+        /* Two-column layout: units left, dashboard right */
+        #main { display: grid; grid-template-columns: 1fr 340px; gap: 1rem; align-items: start; grid-auto-flow: dense; }
+        .unit-section { grid-column: 1; }
+        .syllabus-dashboard { grid-column: 2; grid-row: 1 / span 100; position: sticky; top: 140px; }
+        @media (max-width: 1200px) { #main { grid-template-columns: 1fr; } .syllabus-dashboard { grid-column: 1; position: static; } }
+
+        /* Smooth jump highlight */
+        .flash-highlight { animation: flashBg 2s ease-out 1; }
+        @keyframes flashBg { 0% { background: #fff3cd; } 100% { background: transparent; } }
+        .lesson-table tr { scroll-margin-top: 140px; }
+        .syllabus-actions { display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem; }
+        .cloud-sync { font-size: 0.9rem; color: var(--primary-blue); text-decoration: underline; cursor: pointer; }
+        .syllabus-footnote { color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem; }
+
+        /* density scales automatically via auto-fill */
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="header" id="top">
+        <h1>IB Mathematics: Applications and Interpretation HL</h1>
+        <p>Lower Sixth (L6) Complete Course Plan | Academic Year 2025–2026</p>
+        <p>St Paul's School | Mr Nascimento | Class: L6-MaAIHL</p>
+    </header>
+
+    <div class="container">
+        <nav class="navigation" aria-label="Units navigation">
+            <div class="nav-buttons">
+                <a class="nav-btn" href="#unit1">Unit 1: Rounding and Logarithms</a>
+                <a class="nav-btn" href="#unit2">Unit 2: Sequences and Finance</a>
+                <a class="nav-btn" href="#unit3">Unit 3: Vectors and Planes</a>
+                <a class="nav-btn" href="#unit4">Unit 4: Matrices</a>
+                <a class="nav-btn" href="#unit5">Unit 5: Modelling and Functions 1</a>
+                <a class="nav-btn" href="#unit6">Unit 6: Trigonometry</a>
+                <a class="nav-btn" href="#unit7">Unit 7: Statistics</a>
+                <a class="nav-btn" href="#unit8">Unit 8: Bivariate Data</a>
+                <a class="nav-btn" href="#unit9">Unit 9: Probability</a>
+                <a class="nav-btn" href="#unit10">Unit 10: Inferential Statistics</a>
+                <a class="nav-btn" href="#unit11">Unit 11: Modelling and Functions 2</a>
+                <a class="nav-btn" href="#unit12">Unit 12: Calculus 1</a>
+            </div>
+        </nav>
+        <div class="search" role="search">
+            <label for="lesson-search">Search lessons and topics</label>
+            <input type="search" id="lesson-search" name="lesson-search" placeholder="Type keywords, e.g. vectors, regression, logarithms" aria-describedby="search-help search-status" />
+            <small id="search-help">Results update as you type.</small>
+            <div id="search-status" class="search-status" aria-live="polite" style="margin-top: 0.5rem; color: var(--text-secondary);"></div>
+        </div>
+        <main id="main">
+            <section class="syllabus-dashboard" id="syllabus">
+                <div class="syllabus-header">
+                    <h2>IBDP Mathematics: Applications and Interpretation — Syllabus Coverage</h2>
+                    <div class="syllabus-meta">
+                        <span>Total items: <strong id="syllabus-total">0</strong></span>
+                        <span>Completed: <strong id="syllabus-completed">0</strong></span>
+                        <span>Remaining: <strong id="syllabus-remaining">0</strong></span>
+                    </div>
+                </div>
+                <div class="syllabus-body">
+                    <div class="syllabus-summary">
+                        <div class="syllabus-stats">Overall coverage</div>
+                        <div class="progress-track" aria-hidden="true"><div id="syllabus-progress" class="progress-fill"></div></div>
+                    </div>
+                    <div class="syllabus-grid" id="syllabus-grid">
+                        <!-- Populated by script: compact code grid -->
+                    </div>
+                    <div class="syllabus-actions">
+                        <button class="nav-btn" id="mark-visible-complete" type="button">Mark all visible as complete</button>
+                        <button class="nav-btn" id="reset-completion" type="button" style="background: #6c757d;">Reset</button>
+                        <details class="cloud-sync">
+                            <summary>Sync with cloud (Supabase)</summary>
+                            <div style="margin-top: .5rem; display: grid; gap: .5rem;">
+                                <input type="hidden" id="spb-url" value="https://gjvtncdjcslnkfctqnfy.supabase.co" />
+                                <input type="hidden" id="spb-key" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdnRuY2RqY3NsbmtmY3RxbmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM5NzM0MDEsImV4cCI6MjA1OTU0OTQwMX0.AzALxUUvYLJJtDkvxt7efJ7bGxeKmzOs-fT5bQOndiU" />
+                                <div style="display:flex; gap:.5rem; align-items:center;">
+                                    <button class="nav-btn" id="spb-pull" type="button">Pull from cloud</button>
+                                    <button class="nav-btn" id="spb-push" type="button">Push to cloud</button>
+                                    <small id="spb-status" aria-live="polite"></small>
+                                </div>
+                            </div>
+                        </details>
+                        <label for="auto-mark" class="level-title" style="margin-left: auto; color: var(--primary-blue);">
+                            <input type="checkbox" id="auto-mark" checked style="margin-right: 0.4rem;"> Auto-mark by date
+                        </label>
+                    </div>
+                    <div class="code-legend">
+                        <span><span class="legend-dot legend-sl"></span>SL</span>
+                        <span><span class="legend-dot legend-hl"></span>HL</span>
+                        <span><span class="legend-dot legend-current"></span>Current week</span>
+                        <span><span class="legend-dot legend-completed"></span>Completed</span>
+                    </div>
+                    <p class="syllabus-footnote">Progress is saved locally in your browser. Cloud sync is optional.</p>
+                </div>
+            </section>
+
+        <!-- UNIT 1: ROUNDING, EXPONENTIAL and LOGARITHMIC EXPRESSIONS and EQUATIONS -->
+        <section class="unit-section" id="unit1">
+            <div class="unit-header">
+                <h2>UNIT 1: ROUNDING, EXPONENTIAL, AND LOGARITHMIC EXPRESSIONS AND EQUATIONS</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 1-3 (August 13–29)</span>
+                    <span>📚 11 Topics</span>
+                    <span>⏱️ 8 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 1 — Weeks 1–3: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 13 Aug</div>
+                            <div>Week 1 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.6</span>
+                                Topic 2: Upper and Lower Bounds of Rounded Numbers
+                            </div>
+                            <div class="topic-content">
+                                If x = 4.1 to one decimal place, then 4.05 ≤ x < 4.15. 
+                                Understanding interval notation and applying bounds to measurements.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook:</strong> Chapter 11A, pages 283-286
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 15 Aug</div>
+                            <div>Week 1 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.6</span>
+                                Topic 3 & 4: Percentage Errors and Estimation
+                            </div>
+                            <div class="topic-content">
+                                Calculating measurement errors including rounding errors and measurement limitations. 
+                                Example: Finding maximum percentage error in the area of a circle if radius measured is 2.5 cm to one decimal place.
+                                Students should recognize whether results are reasonable (e.g., lengths cannot be negative).
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 18 Aug</div>
+                            <div>Week 2 - Period 1</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.5</span>
+                                Topic 5: Laws of Exponents with Integer Exponents
+                            </div>
+                            <div class="topic-content">
+                                5³×5⁻⁶=5⁻³, 6⁴÷6³=6, (2³)⁻⁴=2⁻¹², (2x)⁴=16x⁴, 2x⁻³=2/x³
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> Calculation of pH and buffer solutions in chemistry
+                            </div>
+                            <div class="tok-box">
+                                <strong>TOK:</strong> Is mathematics invented or discovered? Consider the number e or logarithms—did they already exist before man defined them?
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Tuesday, 19 Aug</div>
+                            <div>Week 2 - Period 6</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.5</span>
+                                Topic 6: Introduction to Logarithms with Base 10 and e
+                            </div>
+                            <div class="topic-content">
+                                Numerical evaluation of logarithms using technology. 
+                                Awareness that aˣ=b is equivalent to log_a(b)=x, that b>0, and log_e(x)=ln(x).
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 22 Aug</div>
+                            <div>Week 2 - Period 5</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.9</span>
+                                Topic 7: Laws of Logarithms
+                            </div>
+                            <div class="topic-content">
+                                Log of a product, log of a quotient, log of a power, change of base. 
+                                Exponential equations that can be expressed using the same base or not. 
+                                Link to: scaling large and small numbers (AIHL 2.10) and logarithmic and exponential graphs.
+                                Including linearization and interpretation of log-log and semi-log graphs.
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> pH calculations, buffer calculations, finding activation energy from experimental data in chemistry
+                            </div>
+                            <div class="tok-box">
+                                <strong>TOK:</strong> What is meant by "law" and "theory" in mathematics? How does this compare to other areas of knowledge?
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 25 Aug</div>
+                            <div>Week 3 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.10</span>
+                                Topic 8: Simplifying Expressions with Rational Exponents
+                            </div>
+                            <div class="topic-content">
+                                Simplifying expressions, both numerically and algebraically, involving rational exponents.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 27 Aug</div>
+                            <div>Week 3 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.10</span>
+                                Topic 9: Solving Exponential Equations Including Logarithms
+                            </div>
+                            <div class="topic-content">
+                                Advanced techniques for solving exponential equations using logarithms.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 29 Aug</div>
+                            <div>Week 3 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL2.10 and SL1.1</span>
+                                Topics 10-11: Scaling & Scientific Notation
+                            </div>
+                            <div class="topic-content">
+                                Scaling very large or small numbers using logarithms. Linearizing data to determine exponential or power relationships.
+                                Operations with numbers in the form a×10ᵏ where 1≤a<10 and k is an integer.
+                                Note: Calculator notation (e.g., 5.2E30) is not acceptable; must be written as 5.2×10³⁰.
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> Growth of bacteria, traffic to websites, exponential graphs, pH scale, experimental work
+                            </div>
+                            <div class="tok-box">
+                                <strong>TOK:</strong> Does the applicability of knowledge vary across different areas of knowledge?
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 2: ARITHMETIC and GEOMETRIC SEQUENCES and SERIES, and FINANCIAL APPLICATIONS -->
+        <section class="unit-section" id="unit2">
+            <div class="unit-header">
+                <h2>UNIT 2: ARITHMETIC AND GEOMETRIC SEQUENCES AND SERIES, AND FINANCIAL APPLICATIONS</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 4-5 (September 1-12)</span>
+                    <span>📚 8 Topics</span>
+                    <span>⏱️ 6 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 2 — Weeks 4–5: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 1 Sep</div>
+                            <div>Week 4 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.2</span>
+                                Topic 11: Arithmetic Sequences and Series
+                            </div>
+                            <div class="topic-content">
+                                Use of formulae for nth term and sum of first n terms. 
+                                Use of sigma notation for sums of arithmetic sequences.
+                                Spreadsheets, GDCs and graphing software for generating and displaying sequences.
+                            </div>
+                            <div class="tok-box">
+                                <strong>TOK:</strong> Is all knowledge concerned with identification and use of patterns? Consider Fibonacci numbers and the golden ratio.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 3 Sep</div>
+                            <div>Week 4 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.2</span>
+                                Topic 12: Applications of Arithmetic Sequences
+                            </div>
+                            <div class="topic-content">
+                                Real-world applications including simple interest calculations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 5 Sep</div>
+                            <div>Week 4 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.2</span>
+                                Topic 13: Analysis and Prediction with Arithmetic Models
+                            </div>
+                            <div class="topic-content">
+                                Analysis, interpretation and prediction where a model is not perfectly arithmetic.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 8 Sep</div>
+                            <div>Week 5 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.3</span>
+                                Topic 14: Geometric Sequences and Series
+                            </div>
+                            <div class="topic-content">
+                                Use of formulae for nth term and sum of first n terms of geometric sequence.
+                                Use of sigma notation for sums of geometric sequences.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 10 Sep</div>
+                            <div>Week 5 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.3 and SL1.4</span>
+                                Topics 15-16: Applications & Financial Mathematics
+                            </div>
+                            <div class="topic-content">
+                                Applications of geometric sequences. Compound interest and annual depreciation.
+                                Financial applications using technology (GDC financial solver).
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> Population growth models, radioactive decay, investment planning
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 12 Sep</div>
+                            <div>Week 5 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL1.7 and HL1.11</span>
+                                Topics 17-18: Amortization, Annuities & Infinite Series
+                            </div>
+                            <div class="topic-content">
+                                Amortization and annuities using technology. 
+                                Sum of infinite convergent geometric sequences (|r| < 1).
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 3: VECTORS and PLANES -->
+        <section class="unit-section" id="unit3">
+            <div class="unit-header">
+                <h2>UNIT 3: VECTORS AND PLANES (APPLICATIONS TO KINEMATICS)</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 6-7 (September 15-26)</span>
+                    <span>📚 10 Topics</span>
+                    <span>⏱️ 6 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 3 — Weeks 6–7: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 15 Sep</div>
+                            <div>Week 6 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.10</span>
+                                Topic 1: Concept of Vectors and Scalars
+                            </div>
+                            <div class="topic-content">
+                                Representation using directed line segments. Unit vectors i, j, k. 
+                                Components and column representation. The zero vector and -v.
+                                Algebraic and geometric approaches to sum, difference, and scalar multiplication.
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> Vector sums and resultants in physics. Position tracking for peaceful and harmful purposes.
+                            </div>
+                            <div class="tok-box">
+                                <strong>TOK:</strong> To what extent does possession of knowledge carry with it an ethical obligation?
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 17 Sep</div>
+                            <div>Week 6 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.10</span>
+                                Topics 2-3: Position Vectors and Normalizing
+                            </div>
+                            <div class="topic-content">
+                                Position vectors OA = a. Rescaling and normalizing vectors.
+                                Finding unit vectors in the direction of a given vector.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 19 Sep</div>
+                            <div>Week 6 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.11</span>
+                                Topics 4-5: Vector Equations of Lines
+                            </div>
+                            <div class="topic-content">
+                                Vector equation of a line: r = a + λb.
+                                Determining whether lines are parallel, intersecting, or skew.
+                                Finding points of intersection.
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> Ray tracing in computer graphics, GPS navigation systems
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 22 Sep</div>
+                            <div>Week 7 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.13</span>
+                                Topics 6-7: Scalar Product
+                            </div>
+                            <div class="topic-content">
+                                Definition and properties of scalar (dot) product. 
+                                Angle between vectors and lines. Perpendicular vectors.
+                                Applications to work done by a force.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 24 Sep</div>
+                            <div>Week 7 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.13</span>
+                                Topics 8-9: Vector Product
+                            </div>
+                            <div class="topic-content">
+                                Definition and properties of vector (cross) product.
+                                Area of parallelogram and triangle. Torque calculations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 26 Sep</div>
+                            <div>Week 7 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.12</span>
+                                Topic 10: Equations of Planes
+                            </div>
+                            <div class="topic-content">
+                                Cartesian and vector equations of planes.
+                                Intersections of lines and planes, intersection of planes.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 4: MATRICES -->
+        <section class="unit-section" id="unit4">
+            <div class="unit-header">
+                <h2>UNIT 4: MATRICES: CONCEPTS, OPERATIONS, AND APPLICATIONS</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 8-10 (Sep 29 - Oct 24)</span>
+                    <span>📚 15 Topics</span>
+                    <span>⏱️ 9 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 4 — Weeks 8–10: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 29 Sep</div>
+                            <div>Week 8 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.13</span>
+                                Topics 1-2: Matrix Definition and Basic Operations
+                            </div>
+                            <div class="topic-content">
+                                Definition: element, row, column, order (m×n matrices).
+                                Algebra of matrices: equality, addition, subtraction, scalar multiplication.
+                                Identity and zero matrices.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 1 Oct</div>
+                            <div>Week 8 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.13</span>
+                                Topic 3: Matrix Multiplication
+                            </div>
+                            <div class="topic-content">
+                                Properties: associativity, non-commutativity.
+                                Identity matrix In. Conditions for AB to exist.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 3 Oct</div>
+                            <div>Week 8 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.14</span>
+                                Topics 4-5: Determinants and Inverses (2×2)
+                            </div>
+                            <div class="topic-content">
+                                Determinant of 2×2 matrices. Singular matrices.
+                                Inverse of non-singular 2×2 matrices.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="background: #ffe6e6; text-align: center; font-weight: bold;">
+                            HALF-TERM BREAK: 6–10 October
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 13 Oct</div>
+                            <div>Week 9 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.14</span>
+                                Topics 6-7: 3×3 Determinants and Inverses
+                            </div>
+                            <div class="topic-content">
+                                Determinant of 3×3 matrices. Properties of determinants.
+                                Inverse of non-singular 3×3 matrices using technology.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 15 Oct</div>
+                            <div>Week 9 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.14</span>
+                                Topics 8-9: Systems of Linear Equations
+                            </div>
+                            <div class="topic-content">
+                                Solving systems using inverse matrices: AX = B ⟹ X = A⁻¹B.
+                                Consistent and inconsistent systems.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 17 Oct</div>
+                            <div>Week 9 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.15</span>
+                                Topics 10-11: Eigenvalues and Eigenvectors (2×2)
+                            </div>
+                            <div class="topic-content">
+                                Characteristic polynomial and equation.
+                                Finding eigenvalues and corresponding eigenvectors.
+                            </div>
+                            <div class="connections-box">
+                                <strong>Connections:</strong> Population dynamics, Google PageRank algorithm
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 20 Oct</div>
+                            <div>Week 10 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.16</span>
+                                Topics 12-13: Diagonalization and Powers
+                            </div>
+                            <div class="topic-content">
+                                Diagonalization of 2×2 matrices. 
+                                Applications to finding powers of matrices.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 22 Oct</div>
+                            <div>Week 10 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.17</span>
+                                Topic 14: Matrix Transformations
+                            </div>
+                            <div class="topic-content">
+                                Linear transformations in 2D: rotations, reflections, stretches, shears.
+                                Composition of transformations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 24 Oct</div>
+                            <div>Week 10 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL1.16</span>
+                                Topic 15: Applications of Matrices
+                            </div>
+                            <div class="topic-content">
+                                Transition matrices, Markov chains, steady states.
+                                Applications in economics and computer graphics.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 5: MODELLING AND FUNCTIONS 1 -->
+        <section class="unit-section" id="unit5">
+            <div class="unit-header">
+                <h2>UNIT 5: MODELLING AND FUNCTIONS 1</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 11-13 (Oct 27 - Nov 14)</span>
+                    <span>📚 19 Topics</span>
+                    <span>⏱️ 9 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 5 — Weeks 11–13: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 27 Oct</div>
+                            <div>Week 11 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.1</span>
+                                Topics 1-2: Linear Functions
+                            </div>
+                            <div class="topic-content">
+                                Different forms of straight line equations. Gradient and intercepts.
+                                Parallel and perpendicular lines. Linear models: f(x) = mx + c.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 29 Oct</div>
+                            <div>Week 11 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.2</span>
+                                Topics 3-4: Function Concepts
+                            </div>
+                            <div class="topic-content">
+                                Concept of function, domain, range, graph.
+                                Function notation. Informal concept of inverse function.
+                                Testing for functions (vertical line test).
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 31 Oct</div>
+                            <div>Week 11 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.3</span>
+                                Topics 5-6: Key Features of Graphs
+                            </div>
+                            <div class="topic-content">
+                                Zeros, intercepts, vertices, asymptotes, symmetry.
+                                Intersection points using technology.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 3 Nov</div>
+                            <div>Week 12 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.4</span>
+                                Topics 7-8: Composite Functions
+                            </div>
+                            <div class="topic-content">
+                                Composite functions. Identity function.
+                                Finding inverse functions for one-to-one functions.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 5 Nov</div>
+                            <div>Week 12 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.5</span>
+                                Topics 9-10: Quadratic Functions
+                            </div>
+                            <div class="topic-content">
+                                Forms: f(x) = ax² + bx + c, vertex form, factored form.
+                                Axis of symmetry, vertex, minimum/maximum values.
+                                Quadratic models and optimization.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 7 Nov</div>
+                            <div>Week 12 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.6</span>
+                                Topics 11-12: Exponential Functions
+                            </div>
+                            <div class="topic-content">
+                                f(x) = kaˣ + c, f(x) = ka⁻ˣ + c. Natural exponential f(x) = keᵐˣ + c.
+                                Applications: population growth, depreciation, compound interest.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 10 Nov</div>
+                            <div>Week 13 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.7</span>
+                                Topics 13-15: Cubic and Rational Functions
+                            </div>
+                            <div class="topic-content">
+                                Cubic functions and models. Rational functions: vertical and horizontal asymptotes.
+                                Reciprocal functions f(x) = a/(x-p) + q.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 12 Nov</div>
+                            <div>Week 13 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL2.13</span>
+                                Topics 16-17: Function Transformations
+                            </div>
+                            <div class="topic-content">
+                                Translations: y = f(x + p) + q. Reflections in both axes.
+                                Vertical stretch y = af(x). Horizontal stretch y = f(bx).
+                                Composite transformations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 14 Nov</div>
+                            <div>Week 13 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.11</span>
+                                Topics 18-19: Modelling Skills
+                            </div>
+                            <div class="topic-content">
+                                Creating models from real data. Piecewise models.
+                                Evaluating models and their limitations.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 6: FURTHER TRIGONOMETRY -->
+        <section class="unit-section" id="unit6">
+            <div class="unit-header">
+                <h2>UNIT 6: FURTHER TRIGONOMETRY - TRIGONOMETRY of TRIANGLES and CIRCLES - MENSURATION</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 14-15 (Nov 17-28)</span>
+                    <span>📚 9 Topics</span>
+                    <span>⏱️ 6 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 6 — Weeks 14–15: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 17 Nov</div>
+                            <div>Week 14 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL3.1</span>
+                                Topic 1: 3D Geometry - Distance and Midpoint
+                            </div>
+                            <div class="topic-content">
+                                Distance between two points in 3D space. Midpoint formula.
+                                Volume and surface area of 3D solids.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Tuesday, 18 Nov</div>
+                            <div>Week 14 - Period 6</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL3.2</span>
+                                Topic 2: Right-Angled Triangle Trigonometry
+                            </div>
+                            <div class="topic-content">
+                                Sine, cosine, and tangent ratios. Finding sides and angles.
+                                Angles of elevation and depression.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 19 Nov</div>
+                            <div>Week 14 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL3.3</span>
+                                Topic 3: Sine and Cosine Rules
+                            </div>
+                            <div class="topic-content">
+                                The Sine Rule: a/sin A = b/sin B = c/sin C.
+                                The Cosine Rule: c² = a² + b² - 2ab cos C.
+                                Area of triangle: ½ab sin C.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="background: #ffe6e6; text-align: center;">
+                            <strong>Thursday, 20 Nov: Black Awareness Day (no lessons)</strong>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 24 Nov</div>
+                            <div>Week 15 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL3.4 and HL3.7</span>
+                                Topics 4-5: Applications and Radian Measure
+                            </div>
+                            <div class="topic-content">
+                                Applications: bearings, navigation problems.
+                                Definition of radian. Conversion between degrees and radians.
+                                Arc length and sector area.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 26 Nov</div>
+                            <div>Week 15 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.8 and SL2.9</span>
+                                Topics 6-7: Unit Circle and Sinusoidal Functions
+                            </div>
+                            <div class="topic-content">
+                                Definitions of sin θ and cos θ using unit circle.
+                                Pythagorean identity: sin²θ + cos²θ = 1.
+                                Sinusoidal models: f(x) = a sin(b(x-c)) + d.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 28 Nov</div>
+                            <div>Week 15 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL3.8 and HL3.9</span>
+                                Topics 8-9: Trigonometric Identities
+                            </div>
+                            <div class="topic-content">
+                                Double angle identities. Reciprocal functions: sec, csc, cot.
+                                Solving trigonometric equations.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 7: STATISTICS -->
+        <section class="unit-section" id="unit7">
+            <div class="unit-header">
+                <h2>UNIT 7: STATISTICS: CONCEPTS, SAMPLING, AND DESCRIPTIVE STATISTICS</h2>
+                <div class="unit-meta">
+                    <span>📅 Weeks 16-17 (Dec 1-12)</span>
+                    <span>📚 12 Topics</span>
+                    <span>⏱️ 6 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 7 — Weeks 16–17: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 1 Dec</div>
+                            <div>Week 16 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.1</span>
+                                Topics 1-2: Statistical Concepts and Sampling
+                            </div>
+                            <div class="topic-content">
+                                Concepts of population, sample, random sample.
+                                Discrete and continuous data. Reliability of data sources and bias in sampling.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 3 Dec</div>
+                            <div>Week 16 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.1</span>
+                                Topics 3-4: Outliers and Sampling Techniques
+                            </div>
+                            <div class="topic-content">
+                                Interpretation of outliers. Sampling techniques: convenience, simple random,
+                                systematic, quota, stratified.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 5 Dec</div>
+                            <div>Week 16 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.2</span>
+                                Topics 5-6: Data Presentation
+                            </div>
+                            <div class="topic-content">
+                                Frequency tables. Histograms, cumulative frequency graphs.
+                                Box and whisker plots. Appropriate choice of presentation.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 8 Dec</div>
+                            <div>Week 17 - Period 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.3</span>
+                                Topics 7-8: Measures of Central Tendency
+                            </div>
+                            <div class="topic-content">
+                                Mean, median, mode. Quartiles and percentiles.
+                                Effect of constant changes on data.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 10 Dec</div>
+                            <div>Week 17 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.3</span>
+                                Topics 9-10: Measures of Dispersion
+                            </div>
+                            <div class="topic-content">
+                                Range, interquartile range, variance, standard deviation.
+                                Effect of constant changes on dispersion measures.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 12 Dec</div>
+                            <div>Week 17 - Period 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.12</span>
+                                Topics 11-12: Linear Transformations and Piecewise Functions
+                            </div>
+                            <div class="topic-content">
+                                Effect of linear transformations on mean and standard deviation.
+                                Piecewise linear functions.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- END OF TERM 1 -->
+        <div style="background: #ffe6e6; padding: 2rem; text-align: center; margin: 2rem 0; border-radius: 10px;">
+            <h2>END OF TERM 1</h2>
+            <p>Week 18: December 15-18 (Lessons finish at lunchtime)</p>
+            <p>Christmas Holiday: December 19 - February 1</p>
+        </div>
+
+        <!-- TERM 2 BEGINS -->
+        <div style="background: #e6ffe6; padding: 2rem; text-align: center; margin: 2rem 0; border-radius: 10px;">
+            <h2>TERM 2 BEGINS</h2>
+            <p>Lessons resume: Monday, 2 February 2026</p>
+        </div>
+
+        <!-- UNIT 8: BIVARIATE DATA -->
+        <section class="unit-section" id="unit8">
+            <div class="unit-header">
+                <h2>UNIT 8: BIVARIATE DATA: SCATTER GRAPHS, CORRELATION, AND LINEAR AND NON-LINEAR MODELS</h2>
+                <div class="unit-meta">
+                    <span>📅 Term 2, Weeks 1-3 (Feb 2-27)</span>
+                    <span>📚 13 Topics</span>
+                    <span>⏱️ 9 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 8 — Term 2, Weeks 1–3: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 2 Feb</div>
+                            <div>Term 2, Week 1</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.4</span>
+                                Topic 1: Linear Correlation
+                            </div>
+                            <div class="topic-content">
+                                Pearson's product-moment correlation coefficient (r).
+                                Scatter diagrams. Lines of best fit by eye through mean point.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 4 Feb</div>
+                            <div>Term 2, Week 1</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.5</span>
+                                Topics 2-3: Linear Regression
+                            </div>
+                            <div class="topic-content">
+                                Equation of regression line of y on x.
+                                Use for prediction. Interpretation of parameters.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 6 Feb</div>
+                            <div>Term 2, Week 1</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.6</span>
+                                Topics 4-5: Non-linear Models
+                            </div>
+                            <div class="topic-content">
+                                Quadratic, cubic, sinusoidal, exponential models.
+                                Appropriateness and reliability of models.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 9 Feb</div>
+                            <div>Term 2, Week 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.13</span>
+                                Topics 6-7: Linearization Techniques
+                            </div>
+                            <div class="topic-content">
+                                Logarithmic transformations for exponential and power relationships.
+                                Interpreting log-log and semi-log graphs.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 11 Feb</div>
+                            <div>Term 2, Week 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.14</span>
+                                Topics 8-9: Spearman's Rank Correlation
+                            </div>
+                            <div class="topic-content">
+                                Spearman's rank correlation coefficient.
+                                Monotonic relationships. Comparison with Pearson's r.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 13 Feb</div>
+                            <div>Term 2, Week 2</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                Review and Assessment
+                            </div>
+                            <div class="topic-content">
+                                Unit test on correlation and regression.
+                                IA topic discussion and development.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="background: #ffe6e6; text-align: center; font-weight: bold;">
+                            Carnival break: 16–20 February
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 23 Feb</div>
+                            <div>Term 2, Week 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.6</span>
+                                Topics 10-11: Residuals and Model Validation
+                            </div>
+                            <div class="topic-content">
+                                Residual analysis. Sum of square residuals.
+                                Coefficient of determination (R²).
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 25 Feb</div>
+                            <div>Term 2, Week 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.15</span>
+                                Topic 12: Chi-squared Test for Independence
+                            </div>
+                            <div class="topic-content">
+                                Contingency tables. Expected frequencies.
+                                Chi-squared statistic and critical values.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 27 Feb</div>
+                            <div>Term 2, Week 3</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.15</span>
+                                Topic 13: Chi-squared Goodness of Fit
+                            </div>
+                            <div class="topic-content">
+                                Testing distribution fit. Degrees of freedom.
+                                Applications to quality control.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 9: PROBABILITY -->
+        <section class="unit-section" id="unit9">
+            <div class="unit-header">
+                <h2>UNIT 9: PROBABILITY: BASIC, CONDITIONAL, DISCRETE, AND CONTINUOUS DISTRIBUTIONS</h2>
+                <div class="unit-meta">
+                    <span>📅 Term 2, Weeks 4-6 (Mar 2-20)</span>
+                    <span>📚 12 Topics</span>
+                    <span>⏱️ 9 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 9 — Term 2, Weeks 4–6: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 2 Mar</div>
+                            <div>Term 2, Week 4</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.7</span>
+                                Topics 1-2: Basic Probability Concepts
+                            </div>
+                            <div class="topic-content">
+                                Trial, outcome, equally likely outcomes, sample space.
+                                Probability as relative frequency. Expected number of occurrences.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 4 Mar</div>
+                            <div>Term 2, Week 4</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.7</span>
+                                Topic 3: Probability Representations
+                            </div>
+                            <div class="topic-content">
+                                Venn diagrams, tree diagrams, sample space diagrams.
+                                Tables of outcomes.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 6 Mar</div>
+                            <div>Term 2, Week 4</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.8</span>
+                                Topics 4-5: Combined Events and Conditional Probability
+                            </div>
+                            <div class="topic-content">
+                                P(A∪B) = P(A) + P(B) - P(A∩B). Mutually exclusive events.
+                                Conditional probability P(A|B). Independent events.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 9 Mar</div>
+                            <div>Term 2, Week 5</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.9</span>
+                                Topics 6-7: Discrete Random Variables
+                            </div>
+                            <div class="topic-content">
+                                Discrete random variables and probability distributions.
+                                Expected value E(X), variance Var(X), mode.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 11 Mar</div>
+                            <div>Term 2, Week 5</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.10</span>
+                                Topic 8: Binomial Distribution
+                            </div>
+                            <div class="topic-content">
+                                Binomial distribution B(n,p). Mean and variance.
+                                Applications and probability calculations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 13 Mar</div>
+                            <div>Term 2, Week 5</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.11</span>
+                                Topic 9: Normal Distribution
+                            </div>
+                            <div class="topic-content">
+                                Properties of normal distribution. Standard normal N(0,1).
+                                Standardization (z-scores). Inverse normal calculations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 16 Mar</div>
+                            <div>Term 2, Week 6</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.14</span>
+                                Topic 10: Poisson Distribution
+                            </div>
+                            <div class="topic-content">
+                                Poisson distribution Po(λ). Mean and variance.
+                                Applications to rare events.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 18 Mar</div>
+                            <div>Term 2, Week 6</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.16</span>
+                                Topic 11: Continuous Random Variables
+                            </div>
+                            <div class="topic-content">
+                                Probability density functions. Cumulative distribution functions.
+                                Mean and variance of continuous distributions.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 20 Mar</div>
+                            <div>Term 2, Week 6</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.17</span>
+                                Topic 12: Linear Combinations of Random Variables
+                            </div>
+                            <div class="topic-content">
+                                E(aX + bY) = aE(X) + bE(Y).
+                                Var(aX + bY) for independent variables.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 10: INFERENTIAL STATISTICS -->
+        <section class="unit-section" id="unit10">
+            <div class="unit-header">
+                <h2>UNIT 10: INFERENTIAL STATISTICS, AND STATISTICAL TESTS AND ANALYSES</h2>
+                <div class="unit-meta">
+                    <span>📅 Term 2, Weeks 7-9 (Mar 23 - Apr 10)</span>
+                    <span>📚 17 Topics</span>
+                    <span>⏱️ 9 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 10 — Term 2, Weeks 7–9: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 23 Mar</div>
+                            <div>Term 2, Week 7</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.18</span>
+                                Topics 1-3: Sampling and Estimation
+                            </div>
+                            <div class="topic-content">
+                                Linear transformation of random variables.
+                                Expected value of linear combinations.
+                                x̄ as an unbiased estimate of μ.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 25 Mar</div>
+                            <div>Term 2, Week 7</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.18</span>
+                                Topics 4-5: Central Limit Theorem
+                            </div>
+                            <div class="topic-content">
+                                Distribution of sample means.
+                                Standard error. Applications of CLT.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 27 Mar</div>
+                            <div>Term 2, Week 7</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.19</span>
+                                Topics 6-7: Confidence Intervals
+                            </div>
+                            <div class="topic-content">
+                                Confidence intervals for population mean.
+                                z-intervals and t-intervals.
+                                Interpretation of confidence level.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 30 Mar</div>
+                            <div>Term 2, Week 8</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.12</span>
+                                Topics 8-9: Hypothesis Testing Fundamentals
+                            </div>
+                            <div class="topic-content">
+                                Null and alternative hypotheses.
+                                Significance levels, p-values, critical regions.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 1 Apr</div>
+                            <div>Term 2, Week 8</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL4.12</span>
+                                Topics 10-11: t-tests
+                            </div>
+                            <div class="topic-content">
+                                One-sample t-test. Two-sample t-test.
+                                Paired t-test. Assumptions and interpretations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="background: #ffe6e6; text-align: center;">
+                            <strong>Friday, 3 Apr: Good Friday (no lessons)</strong>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 6 Apr</div>
+                            <div>Term 2, Week 9</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.20</span>
+                                Topics 12-14: Type I and Type II Errors
+                            </div>
+                            <div class="topic-content">
+                                Type I error (α) and Type II error (β).
+                                Power of a test. Effect size.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 8 Apr</div>
+                            <div>Term 2, Week 9</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL4.19</span>
+                                Topics 15-16: Transition Matrices
+                            </div>
+                            <div class="topic-content">
+                                Transition matrices and Markov chains.
+                                Regular Markov chains. Steady-state probabilities.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 10 Apr</div>
+                            <div>Term 2, Week 9</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                Review and Mock Exam Preparation
+                            </div>
+                            <div class="topic-content">
+                                Comprehensive review of Units 7-10.
+                                Practice papers and exam techniques.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 11: MODELLING AND FUNCTIONS 2 -->
+        <section class="unit-section" id="unit11">
+            <div class="unit-header">
+                <h2>UNIT 11: MODELLING AND FUNCTIONS 2</h2>
+                <div class="unit-meta">
+                    <span>📅 Term 2, Weeks 11-12 (Apr 27 - May 8)</span>
+                    <span>📚 12 Topics</span>
+                    <span>⏱️ 6 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 11 — Term 2, Weeks 11–12: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="background: #e6f3ff; text-align: center; font-weight: bold;">
+                            HALF-TERM BREAK: April 20-24
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 27 Apr</div>
+                            <div>Term 2, Week 11</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.8</span>
+                                Topics 1-2: Advanced Sinusoidal Models
+                            </div>
+                            <div class="topic-content">
+                                f(x) = a sin(bx) + d, f(x) = a cos(bx) + d.
+                                Amplitude, period, phase shift, vertical translation.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 29 Apr</div>
+                            <div>Term 2, Week 11</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL2.9</span>
+                                Topics 3-4: Unit Circle and Trigonometric Equations
+                            </div>
+                            <div class="topic-content">
+                                Definitions of cos θ and sin θ using unit circle.
+                                Pythagorean identity. Graphical solutions to trigonometric equations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="background: #ffe6e6; text-align: center;">
+                            <strong>Friday, 1 May: Labour Day (no lessons)</strong>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 4 May</div>
+                            <div>Term 2, Week 12</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL2.14</span>
+                                Topics 5-7: Logarithmic Functions
+                            </div>
+                            <div class="topic-content">
+                                Graphs of logarithmic functions.
+                                Solutions to ax = b using logarithms.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 6 May</div>
+                            <div>Term 2, Week 12</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL2.15</span>
+                                Topics 8-10: Reciprocal Trigonometric Functions
+                            </div>
+                            <div class="topic-content">
+                                sec x, csc x, cot x. Graphs and properties.
+                                Pythagorean identities: 1 + tan²x = sec²x.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 8 May</div>
+                            <div>Term 2, Week 12</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL2.16</span>
+                                Topics 11-12: Inverse Functions
+                            </div>
+                            <div class="topic-content">
+                                Inverse trigonometric functions: arcsin, arccos, arctan.
+                                Domain restrictions. Solving equations.
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
+        </section>
+
+        <!-- UNIT 12: CALCULUS 1 -->
+        <section class="unit-section" id="unit12">
+            <div class="unit-header">
+                <h2>UNIT 12: CALCULUS 1 — DIFFERENTIATION AND INTEGRATION</h2>
+                <div class="unit-meta">
+                    <span>📅 Term 2, Weeks 13-16 (May 11 - Jun 3)</span>
+                    <span>📚 20 Topics</span>
+                    <span>⏱️ 12 Lessons</span>
+                </div>
+            </div>
+            
+            <table class="lesson-table">
+                <caption>Unit 12 — Term 2, Weeks 13–16: timetable and topics</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" width="15%">Date & Time</th>
+                        <th scope="col" width="85%">Topic & Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 11 May</div>
+                            <div>Term 2, Week 13</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.1</span>
+                                Topics 1-2: Introduction to Limits and Derivatives
+                            </div>
+                            <div class="topic-content">
+                                Concept of a limit. Derivative as gradient function.
+                                Derivative as rate of change.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 13 May</div>
+                            <div>Term 2, Week 13</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.2</span>
+                                Topics 3-4: Graphical Interpretation
+                            </div>
+                            <div class="topic-content">
+                                Increasing and decreasing functions.
+                                f'(x) > 0, f'(x) = 0, f'(x) < 0 interpretations.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 15 May</div>
+                            <div>Term 2, Week 13</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.3</span>
+                                Topics 5-6: Basic Differentiation Rules
+                            </div>
+                            <div class="topic-content">
+                                f(x) = axⁿ → f'(x) = naxⁿ⁻¹.
+                                Derivatives of sin x, cos x, eˣ, ln x.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 18 May</div>
+                            <div>Term 2, Week 14</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL5.11</span>
+                                Topics 7-8: Product and Quotient Rules
+                            </div>
+                            <div class="topic-content">
+                                Product rule: (uv)' = u'v + uv'.
+                                Quotient rule: (u/v)' = (u'v - uv')/v².
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 20 May</div>
+                            <div>Term 2, Week 14</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">HL5.11</span>
+                                Topics 9-10: Chain Rule
+                            </div>
+                            <div class="topic-content">
+                                Chain rule for composite functions.
+                                Related rates of change.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 22 May</div>
+                            <div>Term 2, Week 14</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.4</span>
+                                Topics 11-12: Applications of Differentiation
+                            </div>
+                            <div class="topic-content">
+                                Tangent and normal equations.
+                                Local maximum and minimum points.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 25 May</div>
+                            <div>Term 2, Week 15</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.9</span>
+                                Topics 13-14: Optimization
+                            </div>
+                            <div class="topic-content">
+                                Optimization problems in context.
+                                Second derivative test.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 27 May</div>
+                            <div>Term 2, Week 15</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.6</span>
+                                Topics 15-16: Introduction to Integration
+                            </div>
+                            <div class="topic-content">
+                                Indefinite integrals as anti-derivatives.
+                                ∫xⁿ dx = xⁿ⁺¹/(n+1) + C.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Friday, 29 May</div>
+                            <div>Term 2, Week 15</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.7</span>
+                                Topics 17-18: Definite Integrals
+                            </div>
+                            <div class="topic-content">
+                                Definite integrals and area under curves.
+                                Fundamental theorem of calculus.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Monday, 1 Jun</div>
+                            <div>Term 2, Week 16</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.8</span>
+                                Topic 19: Area Between Curves
+                            </div>
+                            <div class="topic-content">
+                                Finding area between two curves.
+                                Applications to real-world problems.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="lesson-date">Wednesday, 3 Jun</div>
+                            <div>Term 2, Week 16</div>
+                        </td>
+                        <td>
+                            <div class="topic-title">
+                                <span class="syllabus-code">SL5.10</span>
+                                Topic 20: Numerical Integration
+                            </div>
+                            <div class="topic-content">
+                                Trapezoidal rule. Error estimation.
+                                Applications when analytical integration is difficult.
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" style="background: #ffe6e6; text-align: center;">
+                            <strong>Thursday, 4 Jun: Corpus Christi (no lessons)</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- FINAL WEEKS AND REVISION -->
+        <div style="background: #e6f3ff; padding: 2rem; margin: 2rem 0; border-radius: 10px;">
+            <h2>End of L6 Programme — Revision and Assessment Period</h2>
+            <h3>Weeks 17-19 (June 8-25)</h3>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4>Week 17 (June 8-12):</h4>
+                <ul style="list-style: none; padding-left: 1rem;">
+                    <li>• Monday: Review of Calculus topics</li>
+                    <li>• Wednesday: Mock Paper 1 (Non-calculator)</li>
+                    <li>• Friday: Mock Paper 1 Review</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4>Week 18 (June 15-19):</h4>
+                <ul style="list-style: none; padding-left: 1rem;">
+                    <li>• Monday: Mock Paper 2 (Calculator)</li>
+                    <li>• Wednesday: Mock Paper 2 Review</li>
+                    <li>• Friday: IA Final Draft Due</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4>Week 19 (June 22-25):</h4>
+                <ul style="list-style: none; padding-left: 1rem;">
+                    <li>• Monday: Final Review Session</li>
+                    <li>• Wednesday: Course Evaluation and U6 Preview</li>
+                    <li>• Thursday, 25 June: Last day (lessons finish at lunchtime)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- END OF L6 -->
+        <div style="background: #d4edda; padding: 3rem; text-align: center; margin: 3rem 0; border-radius: 10px; border: 2px solid #28a745;">
+            <h1 style="color: var(--primary-green);">END OF LOWER SIXTH FORM</h1>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Congratulations on completing the L6 Mathematics AI HL Programme!</p>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">Total Topics Covered: 111 (out of 185 total)</p>
+            <p style="font-size: 1.1rem;">Units Completed: 12 (out of 16 total)</p>
+            <p style="font-size: 1.1rem; margin-top: 2rem;"><strong>Upper Sixth (U6) Preview:</strong></p>
+            <p>Unit 13: Differential Equations | Unit 14: Voronoi Diagrams</p>
+            <p>Unit 15: Complex Numbers | Unit 16: Graph Theory</p>
+            <p style="font-size: 1rem; margin-top: 2rem; color: var(--text-secondary);">Summer holiday assignment will be posted on ManageBac</p>
+        </div>
+
+        <!-- Footer -->
+        </main>
+        <footer style="background: var(--primary-blue); color: white; padding: 2rem; text-align: center; margin-top: 3rem;">
+            <p>© 2025–2026 St Paul's School | Mathematics Department</p>
+            <p>IB Mathematics: Applications and Interpretation Higher Level</p>
+            <p>This document contains the complete L6 syllabus mapping and lesson timetable.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Print functionality
+        window.addEventListener('beforeprint', function() {
+            document.querySelectorAll('.unit-section').forEach(section => {
+                section.style.pageBreakInside = 'avoid';
+            });
+        });
+
+        // Active navigation state with aria-current
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = Array.from(document.querySelectorAll('.navigation .nav-btn'));
+            const sectionById = new Map();
+            navLinks.forEach(link => {
+                const id = (link.getAttribute('href') || '').slice(1);
+                const section = document.getElementById(id);
+                if (section) {
+                    sectionById.set(section, link);
+                }
+                link.setAttribute('aria-current', 'false');
+            });
+
+            const setActive = (section) => {
+                navLinks.forEach(l => l.setAttribute('aria-current', 'false'));
+                const link = sectionById.get(section);
+                if (link) link.setAttribute('aria-current', 'true');
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                const visible = entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+                if (visible[0]) {
+                    setActive(visible[0].target);
+                }
+            }, { root: null, rootMargin: '-120px 0px 0px 0px', threshold: [0.25, 0.5, 0.75, 1] });
+
+            document.querySelectorAll('.unit-section').forEach(section => observer.observe(section));
+
+            // British English date formatting across the document
+            const monthMap = {
+                Jan: 'January', Feb: 'February', Mar: 'March', Apr: 'April', May: 'May', Jun: 'June',
+                Jul: 'July', Aug: 'August', Sep: 'September', Oct: 'October', Nov: 'November', Dec: 'December'
+            };
+            const fullMonths = Object.values(monthMap);
+            const allMonthPattern = '(?:' + fullMonths.join('|') + ')';
+            const abbrPattern = '(?:' + Object.keys(monthMap).join('|') + ')';
+
+            const expandAbbreviations = (text) => {
+                return text.replace(new RegExp('\\b' + abbrPattern + '\\b', 'g'), (m) => monthMap[m]);
+            };
+
+            const reorderAcrossMonths = (text) => {
+                const re = new RegExp('(' + allMonthPattern + ')\\s+(\\d{1,2})\\s*[-–]\\s*(' + allMonthPattern + ')\\s+(\\d{1,2})', 'g');
+                return text.replace(re, (match, m1, d1, m2, d2) => `${d1} ${m1} – ${d2} ${m2}`);
+            };
+
+            const reorderSameMonth = (text) => {
+                const re = new RegExp('(' + allMonthPattern + ')\\s+(\\d{1,2})\\s*[-–]\\s*(\\d{1,2})', 'g');
+                return text.replace(re, (match, m, d1, d2) => `${d1}–${d2} ${m}`);
+            };
+
+            const processText = (text) => {
+                let t = text;
+                t = expandAbbreviations(t);
+                t = reorderAcrossMonths(t);
+                t = reorderSameMonth(t);
+                // Expand month abbreviations in weekday dates like "Monday, 11 Aug"
+                t = t.replace(/([A-Za-z]+),\s*(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/g,
+                    (match, dayName, d, abbr) => `${dayName}, ${d} ${monthMap[abbr]}`);
+                return t;
+            };
+
+            const walkAndFormatDates = (root) => {
+                const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                    acceptNode: (node) => {
+                        if (!node.nodeValue) return NodeFilter.FILTER_REJECT;
+                        // Skip extremely short nodes
+                        if (node.nodeValue.trim().length < 6) return NodeFilter.FILTER_REJECT;
+                        // Only process if any month name or abbreviation appears
+                        if (/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)/.test(node.nodeValue)) {
+                            return NodeFilter.FILTER_ACCEPT;
+                        }
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                });
+                const nodes = [];
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+                nodes.forEach(n => {
+                    const updated = processText(n.nodeValue);
+                    if (updated !== n.nodeValue) n.nodeValue = updated;
+                });
+            };
+
+            // Process lesson dates explicitly
+            document.querySelectorAll('.lesson-date').forEach(el => {
+                el.textContent = processText(el.textContent);
+            });
+
+            // Process the rest of the content within the main container
+            const container = document.querySelector('.container');
+            if (container) walkAndFormatDates(container);
+
+            // Search filter for lessons and topics
+            const searchInput = document.getElementById('lesson-search');
+            const status = document.getElementById('search-status');
+            const rows = Array.from(document.querySelectorAll('.lesson-table tbody tr'));
+            const normalise = (s) => (s || '').toLowerCase();
+            const updateStatus = (count) => {
+                if (!status) return;
+                status.textContent = count === rows.length ? '' : `${count} matching row${count === 1 ? '' : 's'}`;
+            };
+            const filter = (query) => {
+                const q = normalise(query);
+                let visible = 0;
+                rows.forEach(tr => {
+                    const text = normalise(tr.textContent);
+                    const match = q.length === 0 || text.includes(q);
+                    tr.style.display = match ? '' : 'none';
+                    if (match) visible += 1;
+                });
+                // Hide empty captions wrappers if entire table has no visible rows
+                document.querySelectorAll('.unit-section').forEach(section => {
+                    const sectionRows = section.querySelectorAll('tbody tr');
+                    const anyVisible = Array.from(sectionRows).some(r => r.style.display !== 'none');
+                    section.style.display = anyVisible ? '' : 'none';
+                });
+                updateStatus(visible);
+            };
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => filter(e.target.value));
+            }
+
+            // ===== Syllabus dashboard =====
+            const syllabusData = [
+                {
+                    topic: 'Topic 1: Number and algebra',
+                    levels: [
+                        { level: 'SL (16 hours)', items: [
+                            { code: 'SL 1.1', text: 'Operations with numbers in scientific notation' },
+                            { code: 'SL 1.2', text: 'Arithmetic sequences and series; sigma notation' },
+                            { code: 'SL 1.3', text: 'Geometric sequences and series; sigma notation' },
+                            { code: 'SL 1.4', text: 'Financial applications: compound interest and depreciation' },
+                            { code: 'SL 1.5', text: 'Laws of exponents; introduction to logarithms (base 10 and e)' },
+                            { code: 'SL 1.6', text: 'Approximations: decimal places, significant figures, bounds, percentage errors' },
+                            { code: 'SL 1.7', text: 'Amortisation and annuities (technology)' },
+                            { code: 'SL 1.8', text: 'Technology for solving systems of linear equations and polynomial equations' }
+                        ]},
+                        { level: 'AHL (13 hours)', items: [
+                            { code: 'AHL 1.9', text: 'Laws of logarithms; change of base' },
+                            { code: 'AHL 1.10', text: 'Rational exponents: simplification' },
+                            { code: 'AHL 1.11', text: 'Sum of infinite geometric sequences' },
+                            { code: 'AHL 1.12', text: 'Complex numbers: introduction and Cartesian form' },
+                            { code: 'AHL 1.13', text: 'Complex numbers: modulus–argument and exponential form' },
+                            { code: 'AHL 1.14', text: 'Matrix algebra: operations and properties' },
+                            { code: 'AHL 1.15', text: 'Eigenvalues and eigenvectors; diagonalisation (2×2)' }
+                        ]}
+                    ]
+                },
+                {
+                    topic: 'Topic 2: Functions',
+                    levels: [
+                        { level: 'SL (31 hours)', items: [
+                            { code: 'SL 2.1', text: 'Equations of straight lines' },
+                            { code: 'SL 2.2', text: 'Function concept: domain, range, notation' },
+                            { code: 'SL 2.3', text: 'Graphs of functions' },
+                            { code: 'SL 2.4', text: 'Key features: extrema, intercepts, asymptotes' },
+                            { code: 'SL 2.5', text: 'Modelling with linear, quadratic, exponential, variation, cubic, sinusoidal' },
+                            { code: 'SL 2.6', text: 'Modelling skills: creating and fitting models' }
+                        ]},
+                        { level: 'AHL (11 hours)', items: [
+                            { code: 'AHL 2.7', text: 'Composite and inverse functions' },
+                            { code: 'AHL 2.8', text: 'Transformations of graphs' },
+                            { code: 'AHL 2.9', text: 'Additional modelling (half-life, ln models, logistic)' },
+                            { code: 'AHL 2.10', text: 'Scaling and linearisation using logarithms' }
+                        ]}
+                    ]
+                },
+                {
+                    topic: 'Topic 3: Geometry and trigonometry',
+                    levels: [
+                        { level: 'SL (18 hours)', items: [
+                            { code: 'SL 3.1', text: '3D distance and midpoint; volume and surface area' },
+                            { code: 'SL 3.2', text: 'Right-angled trigonometry; sine and cosine rules' },
+                            { code: 'SL 3.3', text: 'Applications; Pythagoras; elevation/depression' },
+                            { code: 'SL 3.4', text: 'Circle: arc length and sector area' },
+                            { code: 'SL 3.5', text: 'Perpendicular bisectors' },
+                            { code: 'SL 3.6', text: 'Voronoi diagrams' }
+                        ]},
+                        { level: 'AHL (28 hours)', items: [
+                            { code: 'AHL 3.7', text: 'Radian measure; sector area and arc length' },
+                            { code: 'AHL 3.8', text: 'Unit circle; Pythagorean identity; ambiguous case' },
+                            { code: 'AHL 3.9', text: '2D transformations using matrices' },
+                            { code: 'AHL 3.10', text: 'Vectors and scalars: concepts and representation' },
+                            { code: 'AHL 3.11', text: 'Vector equation of a line (2D and 3D)' },
+                            { code: 'AHL 3.12', text: 'Vector applications to kinematics' },
+                            { code: 'AHL 3.13', text: 'Scalar and vector products' },
+                            { code: 'AHL 3.14', text: 'Graph theory basics' },
+                            { code: 'AHL 3.15', text: 'Adjacency matrices and walks' },
+                            { code: 'AHL 3.16', text: 'Tree and cycle algorithms; Eulerian/Hamiltonian paths' }
+                        ]}
+                    ]
+                },
+                {
+                    topic: 'Topic 4: Statistics and probability',
+                    levels: [
+                        { level: 'SL (36 hours)', items: [
+                            { code: 'SL 4.1', text: 'Statistical concepts; populations and samples' },
+                            { code: 'SL 4.2', text: 'Data presentation: frequency, histograms, cumulative frequency' },
+                            { code: 'SL 4.3', text: 'Central tendency and dispersion' },
+                            { code: 'SL 4.4', text: 'Linear correlation; Pearson’s r' },
+                            { code: 'SL 4.5', text: 'Probability basics: trial, outcome, sample space' },
+                            { code: 'SL 4.6', text: 'Venn diagrams, tree diagrams, outcome tables' },
+                            { code: 'SL 4.7', text: 'Discrete random variables and distributions' },
+                            { code: 'SL 4.8', text: 'Binomial distribution' },
+                            { code: 'SL 4.9', text: 'Normal distribution' },
+                            { code: 'SL 4.10', text: 'Spearman’s rank correlation' },
+                            { code: 'SL 4.11', text: 'Hypotheses; chi-squared tests' }
+                        ]},
+                        { level: 'AHL (16 hours)', items: [
+                            { code: 'AHL 4.12', text: 'Data collection design' },
+                            { code: 'AHL 4.13', text: 'Non-linear regression; R²' },
+                            { code: 'AHL 4.14', text: 'Linear transformations and combinations of random variables' },
+                            { code: 'AHL 4.15', text: 'Central limit theorem' },
+                            { code: 'AHL 4.16', text: 'Confidence intervals for a mean' },
+                            { code: 'AHL 4.17', text: 'Poisson distribution' },
+                            { code: 'AHL 4.18', text: 'Critical values/regions; tests for mean and proportion' },
+                            { code: 'AHL 4.19', text: 'Transition matrices and Markov chains' }
+                        ]}
+                    ]
+                },
+                {
+                    topic: 'Topic 5: Calculus',
+                    levels: [
+                        { level: 'SL (19 hours)', items: [
+                            { code: 'SL 5.1', text: 'Limits and derivative as gradient' },
+                            { code: 'SL 5.2', text: 'Increasing/decreasing; graphical interpretation' },
+                            { code: 'SL 5.3', text: 'Derivatives of polynomials' },
+                            { code: 'SL 5.4', text: 'Tangents and normals' },
+                            { code: 'SL 5.5', text: 'Integration as anti-differentiation' },
+                            { code: 'SL 5.6', text: 'Local maxima and minima' },
+                            { code: 'SL 5.7', text: 'Optimisation problems' },
+                            { code: 'SL 5.8', text: 'Trapezoidal rule' }
+                        ]},
+                        { level: 'AHL (22 hours)', items: [
+                            { code: 'AHL 5.9', text: 'Trig/exponential/log derivatives; chain/product/quotient rules' },
+                            { code: 'AHL 5.10', text: 'Second derivative; classification of stationary points' },
+                            { code: 'AHL 5.11', text: 'Indefinite and definite integrals' },
+                            { code: 'AHL 5.12', text: 'Area and volumes of revolution' },
+                            { code: 'AHL 5.13', text: 'Kinematics: s–v–a relations' },
+                            { code: 'AHL 5.14', text: 'Differential equations: separation of variables' },
+                            { code: 'AHL 5.15', text: 'Slope fields' },
+                            { code: 'AHL 5.16', text: 'Euler’s method (first order)' },
+                            { code: 'AHL 5.17', text: 'Phase portraits (coupled systems)' },
+                            { code: 'AHL 5.18', text: 'Second-order ODEs; Euler’s method and exact solutions' }
+                        ]}
+                    ]
+                }
+            ];
+
+            const grid = document.getElementById('syllabus-grid');
+            const progressFill = document.getElementById('syllabus-progress');
+            const totalEl = document.getElementById('syllabus-total');
+            const completedEl = document.getElementById('syllabus-completed');
+            const remainingEl = document.getElementById('syllabus-remaining');
+            const autoMark = document.getElementById('auto-mark');
+
+            const STORAGE_KEY = 'aihl_syllabus_progress_v1';
+            const loadState = () => {
+                try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; }
+            };
+            const saveState = (state) => localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            let state = loadState();
+
+            const canonical = (code) => code.replace(/^\s*AHL\s*/,'HL').replace(/\s+/g,'');
+            const displayCode = (code) => canonical(code);
+
+            const render = () => {
+                grid.innerHTML = '';
+                let total = 0; let completed = 0;
+                syllabusData.forEach(section => {
+                    const topicWrap = document.createElement('div');
+                    topicWrap.className = 'syllabus-board';
+                    const heading = document.createElement('div');
+                    heading.className = 'topic-heading';
+                    heading.textContent = section.topic;
+                    topicWrap.appendChild(heading);
+                    section.levels.forEach(level => {
+                        const levelTitle = document.createElement('div');
+                        levelTitle.className = 'level-title';
+                        levelTitle.textContent = level.level;
+                        topicWrap.appendChild(levelTitle);
+                        const codeGrid = document.createElement('div');
+                        codeGrid.className = 'code-grid';
+                        level.items.forEach(item => {
+                            total += 1;
+                            const key = canonical(item.code);
+                            const isDone = !!state[key];
+                            if (isDone) completed += 1;
+                            const pill = document.createElement('button');
+                            pill.type = 'button';
+                            const isHL = /^(AHL|HL)/.test(item.code);
+                            pill.className = 'code-pill ' + (isHL ? 'tile--hl' : 'tile--sl') + (isDone ? ' completed' : '');
+                            pill.dataset.code = key;
+                            pill.title = `${item.code}: ${item.text}`;
+                            pill.setAttribute('aria-pressed', String(isDone));
+                            pill.textContent = displayCode(item.code);
+                            pill.addEventListener('click', () => {
+                                // 1) Toggle completion state
+                                const cur = !pill.classList.contains('completed');
+                                pill.classList.toggle('completed', cur);
+                                pill.setAttribute('aria-pressed', String(cur));
+                                state[key] = cur; if (!cur) delete state[key]; saveState(state);
+                                updateSummary();
+                                schedulePush();
+                                // 2) Scroll to the first matching lesson row and flash it
+                                const rows = Array.from(document.querySelectorAll('.lesson-table tbody tr'));
+                                let targetRow = null;
+                                for (const tr of rows) {
+                                    const codeText = tr.querySelector('.syllabus-code')?.textContent || '';
+                                    if (new RegExp('(^|\\s)'+key.replace('.', '\\.').replace('HL','(?:AHL|HL)')+'(\\s|$)').test(codeText.replace(/\s+/g,''))) {
+                                        targetRow = tr; break;
+                                    }
+                                }
+                                if (targetRow) {
+                                    targetRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    targetRow.classList.add('flash-highlight');
+                                    setTimeout(() => targetRow.classList.remove('flash-highlight'), 2000);
+                                }
+                            });
+                            codeGrid.appendChild(pill);
+                        });
+                        topicWrap.appendChild(codeGrid);
+                    });
+                    grid.appendChild(topicWrap);
+                });
+                totalEl.textContent = String(total);
+                completedEl.textContent = String(completed);
+                remainingEl.textContent = String(total - completed);
+                const pct = total ? Math.round((completed / total) * 100) : 0;
+                progressFill.style.width = `${pct}%`;
+                progressFill.setAttribute('aria-valuenow', String(pct));
+                progressFill.setAttribute('aria-valuemin', '0');
+                progressFill.setAttribute('aria-valuemax', '100');
+            };
+
+            const updateSummary = () => {
+                const pills = Array.from(document.querySelectorAll('.code-pill'));
+                const total = pills.length;
+                const completed = pills.filter(p => p.classList.contains('completed')).length;
+                totalEl.textContent = String(total);
+                completedEl.textContent = String(completed);
+                remainingEl.textContent = String(total - completed);
+                const pct = total ? Math.round((completed / total) * 100) : 0;
+                progressFill.style.width = `${pct}%`;
+                progressFill.setAttribute('aria-valuenow', String(pct));
+            };
+
+            render();
+
+            // Actions
+            const markVisibleBtn = document.getElementById('mark-visible-complete');
+            const resetBtn = document.getElementById('reset-completion');
+            markVisibleBtn?.addEventListener('click', () => {
+                document.querySelectorAll('.code-pill').forEach(pill => {
+                    pill.classList.add('completed');
+                    pill.setAttribute('aria-pressed','true');
+                    state[pill.dataset.code] = true;
+                });
+                saveState(state);
+                updateSummary();
+                schedulePush();
+            });
+            resetBtn?.addEventListener('click', () => {
+                state = {}; saveState(state);
+                document.querySelectorAll('.code-pill').forEach(pill => {
+                    pill.classList.remove('completed');
+                    pill.setAttribute('aria-pressed','false');
+                });
+                updateSummary();
+                schedulePush();
+            });
+
+            // Auto-mark by date: marks items if corresponding lessons have passed (heuristic)
+            const monthIdx = {January:0, February:1, March:2, April:3, May:4, June:5, July:6, August:7, September:8, October:9, November:10, December:11};
+            const parseDate = (text) => {
+                const m = text.match(/(Monday|Tuesday|Wednesday|Thursday|Friday),\s*(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)/);
+                if (!m) return null;
+                const day = parseInt(m[2],10); const mon = monthIdx[m[3]];
+                const year = mon >= 7 ? 2025 : 2026; // Aug–Dec are 2025, others 2026
+                return new Date(year, mon, day);
+            };
+            const buildScheduleMap = () => {
+                const map = {};
+                document.querySelectorAll('.lesson-table tbody tr').forEach(tr => {
+                    const dateEl = tr.querySelector('.lesson-date');
+                    if (!dateEl) return;
+                    const d = parseDate(dateEl.textContent || '');
+                    if (!d) return;
+                    const codesText = (tr.querySelector('.syllabus-code')?.textContent || '');
+                    const matches = codesText.match(/\b(?:AHL|HL|SL)\s*\d+\.\d+\b/g) || [];
+                    matches.forEach(c => {
+                        const key = canonical(c);
+                        if (!map[key] || d < map[key]) map[key] = d;
+                    });
+                });
+                return map;
+            };
+            const applyTemporalClasses = (schedule) => {
+                const now = new Date();
+                const startOfWeek = new Date(now); startOfWeek.setDate(now.getDate() - ((now.getDay()+6)%7)); // Monday
+                const endOfWeek = new Date(startOfWeek); endOfWeek.setDate(startOfWeek.getDate()+6);
+                document.querySelectorAll('.code-pill').forEach(pill => {
+                    const code = pill.dataset.code;
+                    const d = schedule[code];
+                    pill.classList.remove('past','current');
+                    if (!d) return;
+                    if (d < startOfWeek) pill.classList.add('past');
+                    else if (d >= startOfWeek && d <= endOfWeek) pill.classList.add('current');
+                });
+            };
+            const autoMarkByDate = () => {
+                const schedule = buildScheduleMap();
+                const now = new Date();
+                Object.entries(schedule).forEach(([code, d]) => {
+                    if (d < now) state[code] = true;
+                });
+                saveState(state);
+                document.querySelectorAll('.code-pill').forEach(pill => {
+                    const code = pill.dataset.code;
+                    const done = !!state[code];
+                    pill.classList.toggle('completed', done);
+                    pill.setAttribute('aria-pressed', String(done));
+                });
+                applyTemporalClasses(schedule);
+                updateSummary();
+                schedulePush();
+            };
+            if (autoMark?.checked) {
+                autoMarkByDate();
+            }
+            autoMark?.addEventListener('change', () => { if (autoMark.checked) autoMarkByDate(); });
+
+            // Supabase pull/push
+            const spbUrlInput = document.getElementById('spb-url');
+            const spbKeyInput = document.getElementById('spb-key');
+            const spbPullBtn = document.getElementById('spb-pull');
+            const spbPushBtn = document.getElementById('spb-push');
+            const spbStatus = document.getElementById('spb-status');
+            const deviceId = (() => {
+                const k = 'aihl_device_id';
+                let v = localStorage.getItem(k);
+                if (!v) { v = crypto.randomUUID(); localStorage.setItem(k, v); }
+                return v;
+            })();
+            function getSupabaseClient() {
+                const url = spbUrlInput?.value?.trim();
+                const key = spbKeyInput?.value?.trim();
+                if (!url || !key) throw new Error('Missing Supabase URL or anon key');
+                // globalThis.supabase from UMD
+                return window.supabase.createClient(url, key);
+            }
+            async function pullFromCloud() {
+                try {
+                    spbStatus.textContent = 'Pulling…';
+                    const supa = getSupabaseClient();
+                    const { data, error } = await supa
+                        .from('aihl_syllabus_progress')
+                        .select('code, completed')
+                        .eq('device_id', deviceId);
+                    if (error) throw error;
+                    (data || []).forEach(row => { state[canonical(row.code)] = !!row.completed; });
+                    saveState(state);
+                    document.querySelectorAll('.code-pill')?.forEach(pill => {
+                        const code = pill.dataset.code;
+                        const done = !!state[code];
+                        pill.classList.toggle('completed', done);
+                        pill.setAttribute('aria-pressed', String(done));
+                    });
+                    updateSummary();
+                    spbStatus.textContent = 'Pulled ✓';
+                } catch (e) {
+                    spbStatus.textContent = 'Pull failed';
+                    console.error(e);
+                    alert('Pull failed: ' + (e?.message || e));
+                }
+            }
+            async function pushToCloud() {
+                try {
+                    spbStatus.textContent = 'Pushing…';
+                    const supa = getSupabaseClient();
+                    const rows = Object.keys(state).map(code => ({
+                        device_id: deviceId,
+                        code,
+                        completed: !!state[code],
+                        completed_at: state[code] ? new Date().toISOString() : null,
+                    }));
+                    if (rows.length === 0) { spbStatus.textContent = 'Nothing to push'; return; }
+                    const { error } = await supa.from('aihl_syllabus_progress').upsert(rows, { onConflict: 'device_id,code' });
+                    if (error) throw error;
+                    spbStatus.textContent = 'Pushed ✓';
+                } catch (e) {
+                    spbStatus.textContent = 'Push failed';
+                    console.error(e);
+                    alert('Push failed: ' + (e?.message || e));
+                }
+            }
+            spbPullBtn?.addEventListener('click', pullFromCloud);
+            spbPushBtn?.addEventListener('click', pushToCloud);
+
+            // Debounced incremental push after user changes
+            let __pushTimer = null;
+            function schedulePush() {
+                if (!spbUrlInput || !spbKeyInput) return;
+                clearTimeout(__pushTimer);
+                __pushTimer = setTimeout(() => { pushToCloud(); }, 2000);
+            }
+
+            // Auto-sync once per browser session: pull → merge (OR) → push
+            async function autoSyncOnce() {
+                try {
+                    if (!spbUrlInput || !spbKeyInput) return;
+                    if (localStorage.getItem('aihl_synced_once_v1')) return;
+                    spbStatus.textContent = 'Syncing…';
+                    // Pull
+                    const supa = getSupabaseClient();
+                    const { data, error } = await supa
+                        .from('aihl_syllabus_progress')
+                        .select('code, completed')
+                        .eq('device_id', deviceId);
+                    if (error) throw error;
+                    // Merge (completed = remote OR local)
+                    (data || []).forEach(row => {
+                        const k = canonical(row.code);
+                        state[k] = !!row.completed || !!state[k];
+                    });
+                    saveState(state);
+                    // Reflect on UI
+                    document.querySelectorAll('.code-pill').forEach(pill => {
+                        const done = !!state[pill.dataset.code];
+                        pill.classList.toggle('completed', done);
+                        pill.setAttribute('aria-pressed', String(done));
+                    });
+                    updateSummary();
+                    // Push merged
+                    const rows = Object.keys(state).map(code => ({
+                        device_id: deviceId,
+                        code,
+                        completed: !!state[code],
+                        completed_at: state[code] ? new Date().toISOString() : null,
+                    }));
+                    if (rows.length) {
+                        const { error: upErr } = await supa
+                            .from('aihl_syllabus_progress')
+                            .upsert(rows, { onConflict: 'device_id,code' });
+                        if (upErr) throw upErr;
+                    }
+                    localStorage.setItem('aihl_synced_once_v1', '1');
+                    spbStatus.textContent = 'Synced ✓';
+                } catch (e) {
+                    console.error(e);
+                    spbStatus.textContent = 'Sync failed';
+                }
+            }
+            autoSyncOnce();
+        });
+    </script>
+</body>
+</html>
