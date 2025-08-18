@@ -381,8 +381,8 @@
 
     <div class="container">
         <div id="exam-banner" class="exam-banner" role="status" aria-live="polite">
-            <div class="headline">Next exam in <span id="exam-days">0</span> day(s). Please prepare.</div>
-            <div class="meta">Date: <span id="exam-date"></span> · Window: <span id="exam-window"></span></div>
+            <div class="headline">Next assessment in <span id="exam-days">0</span> day(s). Please prepare.</div>
+            <div class="meta">Date: <span id="exam-date"></span> · Assessment: <span id="exam-window"></span></div>
             <details>
                 <summary>Click to review likely content</summary>
                 <div id="exam-scope" style="margin-top: .5rem;"></div>
@@ -3073,8 +3073,10 @@
             const examWindowEl = document.getElementById('exam-window');
             const examScopeEl = document.getElementById('exam-scope');
 
-            // Define exam events (start/end handled; one-day exams have identical start/end)
+            // Define assessment events (checkpoints and formal exam window)
             const EXAMS = [
+                { start: new Date(2025,8,1), end: new Date(2025,8,1), label: 'Checkpoint 1' }, // 1 Sep 2025
+                { start: new Date(2025,8,29), end: new Date(2025,8,29), label: 'Checkpoint 2' }, // 29 Sep 2025
                 { start: new Date(2025,10,10), end: new Date(2025,10,19), label: 'Exam Papers (Paper 1 and 2)' }, // 10–19 Nov 2025
                 { start: new Date(2026,2,2), end: new Date(2026,2,2), label: 'Checkpoint 3' }, // 2 Mar 2026
                 { start: new Date(2026,3,27), end: new Date(2026,3,27), label: 'Checkpoint 4' } // 27 Apr 2026
