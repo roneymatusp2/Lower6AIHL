@@ -354,6 +354,21 @@
 
         /* density scales automatically via auto-fill */
         .hidden { display: none !important; }
+
+        /* Exam countdown banner */
+        .exam-banner {
+            background: #fff7e6;
+            border: 1px solid #f59e0b;
+            color: #7a4a00;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            display: none;
+        }
+        .exam-banner .headline { font-weight: 700; font-size: 1.05rem; }
+        .exam-banner .meta { color: #8a5a00; font-size: 0.95rem; margin-top: 0.25rem; }
+        .exam-banner details { margin-top: 0.5rem; }
     </style>
 </head>
 <body>
@@ -365,6 +380,14 @@
     </header>
 
     <div class="container">
+        <div id="exam-banner" class="exam-banner" role="status" aria-live="polite">
+            <div class="headline">Next exam in <span id="exam-days">0</span> day(s). Please prepare.</div>
+            <div class="meta">Date: <span id="exam-date"></span> · Window: <span id="exam-window"></span></div>
+            <details>
+                <summary>Click to review likely content</summary>
+                <div id="exam-scope" style="margin-top: .5rem;"></div>
+            </details>
+        </div>
         <nav class="navigation" aria-label="Units navigation">
             <div class="nav-buttons">
                 <a class="nav-btn" href="#unit1">Unit 1: Rounding and Logarithms</a>
@@ -3042,6 +3065,78 @@
                 });
                 return map;
             };
+
+            // ===== Exam countdown =====
+            const examBanner = document.getElementById('exam-banner');
+            const examDaysEl = document.getElementById('exam-days');
+            const examDateEl = document.getElementById('exam-date');
+            const examWindowEl = document.getElementById('exam-window');
+            const examScopeEl = document.getElementById('exam-scope');
+
+            // Define exam events (start/end handled; one-day exams have identical start/end)
+            const EXAMS = [
+                { start: new Date(2025,10,10), end: new Date(2025,10,19), label: 'Exam Papers (Paper 1 and 2)' }, // 10–19 Nov 2025
+                { start: new Date(2026,2,2), end: new Date(2026,2,2), label: 'Checkpoint 3' }, // 2 Mar 2026
+                { start: new Date(2026,3,27), end: new Date(2026,3,27), label: 'Checkpoint 4' } // 27 Apr 2026
+            ];
+
+            function getNextExam(now) {
+                const future = EXAMS
+                    .map(e => ({ ...e, days: Math.ceil((e.start - now) / 86400000) }))
+                    .filter(e => e.days >= 0)
+                    .sort((a,b) => a.start - b.start);
+                return future[0] || null;
+            }
+
+            function formatDateRange(start, end) {
+                const opts = { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' };
+                const sameDay = start.toDateString() === end.toDateString();
+                if (sameDay) return start.toLocaleDateString('en-GB', opts);
+                const s1 = start.toLocaleDateString('en-GB', { day:'numeric' });
+                const m1 = start.toLocaleDateString('en-GB', { month:'long' });
+                const s2 = end.toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+                return `${s1} ${m1} – ${s2}`;
+            }
+
+            function collectScope(untilDate) {
+                // Collect syllabus codes whose lesson date is < untilDate
+                const scopeCodes = new Set();
+                document.querySelectorAll('.lesson-table tbody tr').forEach(tr => {
+                    const d = parseDate(tr.querySelector('.lesson-date')?.textContent || '');
+                    if (!d || d >= untilDate) return;
+                    const codesText = tr.querySelector('.syllabus-code')?.textContent || '';
+                    (codesText.match(/\b(?:AHL|HL|SL)\s*\d+\.\d+\b/g) || []).forEach(c => scopeCodes.add(canonical(c)));
+                });
+                // Render compact list grouped by topic prefix (SLx./HLx.)
+                const byTopic = {};
+                Array.from(scopeCodes).sort().forEach(code => {
+                    const m = code.match(/^(SL|HL)(\d+)\./);
+                    const key = m ? `${m[1]} ${m[2]}` : 'Other';
+                    byTopic[key] = byTopic[key] || [];
+                    byTopic[key].push(code);
+                });
+                const frag = document.createDocumentFragment();
+                Object.entries(byTopic).forEach(([k, codes]) => {
+                    const p = document.createElement('p');
+                    p.innerHTML = `<strong>${k}</strong>: ${codes.join(', ')}`;
+                    frag.appendChild(p);
+                });
+                examScopeEl.innerHTML = '';
+                examScopeEl.appendChild(frag);
+            }
+
+            (function setupExamBanner(){
+                const now = new Date();
+                const next = getNextExam(now);
+                if (!next) return;
+                const days = Math.ceil((next.start - now) / 86400000);
+                if (days < 0) return;
+                examDaysEl.textContent = String(days);
+                examDateEl.textContent = formatDateRange(next.start, next.end);
+                examWindowEl.textContent = next.label;
+                collectScope(next.start);
+                examBanner.style.display = 'block';
+            })();
             const applyTemporalClasses = (schedule) => {
                 const now = new Date();
                 const startOfWeek = new Date(now); startOfWeek.setDate(now.getDate() - ((now.getDay()+6)%7)); // Monday
