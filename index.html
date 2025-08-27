@@ -3115,18 +3115,20 @@
 
                 if (hlCodes.length > 0) {
                     const hlSection = document.createElement('div');
-                    hlSection.innerHTML = '<h4 style="margin: 0.5rem 0; color: var(--primary-blue);">HL Selection Topics:</h4>';
+                    hlSection.style.cssText = 'background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; margin: 0.75rem 0;';
+                    hlSection.innerHTML = '<h4 style="margin: 0 0 0.75rem 0; color: var(--primary-blue); font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid var(--primary-blue); padding-bottom: 0.5rem;">📚 HL Selection Topics</h4>';
                     const hlList = document.createElement('ul');
-                    hlList.style.cssText = 'margin: 0.5rem 0 0.5rem 1.2rem; line-height: 1.4;';
+                    hlList.style.cssText = 'margin: 0; padding: 0; list-style: none;';
                     
                     hlCodes.forEach(code => {
                         const detail = topicDetails[code];
                         if (detail) {
                             const li = document.createElement('li');
+                            li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-blue);';
                             const linkHtml = detail.link ? 
-                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue);">${detail.book}</a>` : 
+                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-blue);">${detail.book}</a>` : 
                                 detail.book;
-                            li.innerHTML = `<strong>AHL ${code.replace('HL', '')}:</strong> ${detail.name} — ${linkHtml}`;
+                            li.innerHTML = `<div style="margin-bottom: 0.25rem;"><strong style="color: var(--primary-red); font-size: 0.95rem;">AHL ${code.replace('HL', '')}:</strong> <span style="color: var(--text-main); font-weight: 600;">${detail.name}</span></div><div style="font-size: 0.9rem; color: var(--text-secondary);">📖 ${linkHtml}</div>`;
                             hlList.appendChild(li);
                         }
                     });
@@ -3136,28 +3138,48 @@
 
                 if (slCodes.length > 0) {
                     const slSection = document.createElement('div');
-                    slSection.innerHTML = '<h4 style="margin: 0.5rem 0; color: var(--primary-blue);">SL Selection Topics:</h4>';
+                    slSection.style.cssText = 'background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 100%); border: 1px solid #d1fae5; border-radius: 8px; padding: 1rem; margin: 0.75rem 0;';
+                    slSection.innerHTML = '<h4 style="margin: 0 0 0.75rem 0; color: var(--primary-green); font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid var(--primary-green); padding-bottom: 0.5rem;">📘 SL Selection Topics</h4>';
                     const slList = document.createElement('ul');
-                    slList.style.cssText = 'margin: 0.5rem 0 0.5rem 1.2rem; line-height: 1.4;';
+                    slList.style.cssText = 'margin: 0; padding: 0; list-style: none;';
                     
                     slCodes.forEach(code => {
                         const detail = topicDetails[code];
                         if (detail) {
                             const li = document.createElement('li');
+                            li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-green);';
                             let linkHtml;
                             if (detail.links) {
                                 // Multiple links for SL1.5
-                                linkHtml = `<a href="${detail.links[0]}" target="_blank" style="color: var(--primary-blue);">Hodder SL, Chapter 1A — Laws of exponents (pp. 4–10)</a> & <a href="${detail.links[1]}" target="_blank" style="color: var(--primary-blue);">Chapter 1C — Logarithms (pp. 14–21)</a>`;
+                                linkHtml = `<a href="${detail.links[0]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">Hodder SL, Chapter 1A — Laws of exponents (pp. 4–10)</a> & <a href="${detail.links[1]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">Chapter 1C — Logarithms (pp. 14–21)</a>`;
                             } else {
-                                linkHtml = `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue);">${detail.book}</a>`;
+                                linkHtml = `<a href="${detail.link}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">${detail.book}</a>`;
                             }
-                            li.innerHTML = `<strong>${code}:</strong> ${detail.name} — ${linkHtml}`;
+                            li.innerHTML = `<div style="margin-bottom: 0.25rem;"><strong style="color: var(--primary-red); font-size: 0.95rem;">${code}:</strong> <span style="color: var(--text-main); font-weight: 600;">${detail.name}</span></div><div style="font-size: 0.9rem; color: var(--text-secondary);">📖 ${linkHtml}</div>`;
                             slList.appendChild(li);
                         }
                     });
                     slSection.appendChild(slList);
                     frag.appendChild(slSection);
                 }
+
+                // Add exercises link section
+                const exercisesSection = document.createElement('div');
+                exercisesSection.style.cssText = 'background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; border-radius: 8px; padding: 1rem; margin: 0.75rem 0; text-align: center;';
+                exercisesSection.innerHTML = `
+                    <h4 style="margin: 0 0 0.5rem 0; color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">🎯 Assessment Preparation</h4>
+                    <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 0.75rem; border: 2px dashed var(--accent-gold);">
+                        <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin" 
+                           target="_blank" 
+                           style="color: var(--accent-gold); text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(196,154,0,0.1); border-radius: 6px; border: 1px solid var(--accent-gold); transition: all 0.3s ease;"
+                           onmouseover="this.style.background='var(--accent-gold)'; this.style.color='white';"
+                           onmouseout="this.style.background='rgba(196,154,0,0.1)'; this.style.color='var(--accent-gold)';">
+                            📝 EXERCISES FOR THE CHECKPOINT 1
+                        </a>
+                        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); font-style: italic;">Practice exercises specifically designed for your upcoming assessment</div>
+                    </div>
+                `;
+                frag.appendChild(exercisesSection);
 
                 examScopeEl.innerHTML = '';
                 examScopeEl.appendChild(frag);
