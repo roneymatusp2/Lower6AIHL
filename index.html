@@ -386,18 +386,8 @@
             <details>
                 <summary>Click to review likely content</summary>
                 <div id="exam-scope" style="margin-top: .5rem;">
-                    <h4 style="margin: 0.5rem 0; color: var(--primary-blue);">HL Selection Topics:</h4>
-                    <ul style="margin: 0.5rem 0 0.5rem 1.2rem; line-height: 1.4;">
-                        <li><strong>AHL 1.10:</strong> Simplifying expressions involving rational exponents — <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Hodder HL, Chapter 1A — Laws of exponents with rational exponents (pp. 4–5)</a></li>
-                        <li><strong>AHL 1.9:</strong> Laws of logarithms — <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae6793002c8385336f/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Hodder HL, Chapter 1B — Logarithms (pp. 6–11)</a></li>
-                        <li><strong>AHL 2.10:</strong> Scaling and linearising data; log and semi‑log graphs — <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Hodder HL, Chapter 1D — Using logarithmic scales on graphs (pp. 15–29)</a></li>
-                    </ul>
-                    <h4 style="margin: 0.5rem 0; color: var(--primary-blue);">SL Selection Topics:</h4>
-                    <ul style="margin: 0.5rem 0 0.5rem 1.2rem; line-height: 1.4;">
-                        <li><strong>SL 1.1:</strong> Operations with numbers in the form a×10^k (1 ≤ a < 10, k ∈ ℤ) — <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67d4001b25d67a17/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Hodder SL, Chapter 1B — Operations with numbers in the form a×10^k (pp. 11–13)</a></li>
-                        <li><strong>SL 1.5:</strong> Laws of exponents with integer exponents; introduction to logarithms (base 10 and e) — <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67cb0032912c6ab7/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Hodder SL, Chapter 1A — Laws of exponents (pp. 4–10)</a> & <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67dc0029970c3d6b/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Chapter 1C — Logarithms (pp. 14–21)</a></li>
-                        <li><strong>SL 1.6:</strong> Approximation; significant figures; upper & lower bounds; percentage errors; estimation — <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67e7001fc7234d04/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="color: var(--primary-blue);">Hodder SL, Chapter 11A — Approximation (pp. 280–286)</a></li>
-                    </ul>
+                    <!-- This content is dynamically populated by the collectScope() function in JavaScript -->
+                    <!-- It will show the full syllabus names, textbook references, and page numbers for upcoming assessments -->
                 </div>
             </details>
         </div>
@@ -3070,6 +3060,43 @@
             }
 
             function collectScope(untilDate) {
+                // Define the complete topic information with syllabus names and textbook links
+                const topicDetails = {
+                    'HL1.10': {
+                        name: 'Simplifying expressions involving rational exponents',
+                        book: 'Hodder HL, Chapter 1A — Laws of exponents with rational exponents (pp. 4–5)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+                    },
+                    'HL1.9': {
+                        name: 'Laws of logarithms',
+                        book: 'Hodder HL, Chapter 1B — Logarithms (pp. 6–11)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae6793002c8385336f/view?project=68ae66cf002308df352a&mode=admin'
+                    },
+                    'HL2.10': {
+                        name: 'Scaling and linearising data; log and semi‑log graphs',
+                        book: 'Hodder HL, Chapter 1D — Using logarithmic scales on graphs (pp. 15–29)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+                    },
+                    'SL1.1': {
+                        name: 'Operations with numbers in the form a×10^k (1 ≤ a < 10, k ∈ ℤ)',
+                        book: 'Hodder SL, Chapter 1B — Operations with numbers in the form a×10^k (pp. 11–13)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67d4001b25d67a17/view?project=68ae66cf002308df352a&mode=admin'
+                    },
+                    'SL1.5': {
+                        name: 'Laws of exponents with integer exponents; introduction to logarithms (base 10 and e)',
+                        book: 'Hodder SL, Chapter 1A — Laws of exponents (pp. 4–10) & Chapter 1C — Logarithms (pp. 14–21)',
+                        links: [
+                            'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67cb0032912c6ab7/view?project=68ae66cf002308df352a&mode=admin',
+                            'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67dc0029970c3d6b/view?project=68ae66cf002308df352a&mode=admin'
+                        ]
+                    },
+                    'SL1.6': {
+                        name: 'Approximation; significant figures; upper & lower bounds; percentage errors; estimation',
+                        book: 'Hodder SL, Chapter 11A — Approximation (pp. 280–286)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67e7001fc7234d04/view?project=68ae66cf002308df352a&mode=admin'
+                    }
+                };
+
                 // Collect syllabus codes whose lesson date is < untilDate
                 const scopeCodes = new Set();
                 document.querySelectorAll('.lesson-table tbody tr').forEach(tr => {
@@ -3078,20 +3105,60 @@
                     const codesText = tr.querySelector('.syllabus-code')?.textContent || '';
                     (codesText.match(/\b(?:AHL|HL|SL)\s*\d+\.\d+\b/g) || []).forEach(c => scopeCodes.add(canonical(c)));
                 });
-                // Render compact list grouped by topic prefix (SLx./HLx.)
-                const byTopic = {};
-                Array.from(scopeCodes).sort().forEach(code => {
-                    const m = code.match(/^(SL|HL)(\d+)\./);
-                    const key = m ? `${m[1]} ${m[2]}` : 'Other';
-                    byTopic[key] = byTopic[key] || [];
-                    byTopic[key].push(code);
-                });
+
+                // Create detailed content with syllabus names and textbook links
                 const frag = document.createDocumentFragment();
-                Object.entries(byTopic).forEach(([k, codes]) => {
-                    const p = document.createElement('p');
-                    p.innerHTML = `<strong>${k}</strong>: ${codes.join(', ')}`;
-                    frag.appendChild(p);
-                });
+                
+                // Group by HL and SL
+                const hlCodes = Array.from(scopeCodes).filter(code => code.startsWith('HL')).sort();
+                const slCodes = Array.from(scopeCodes).filter(code => code.startsWith('SL')).sort();
+
+                if (hlCodes.length > 0) {
+                    const hlSection = document.createElement('div');
+                    hlSection.innerHTML = '<h4 style="margin: 0.5rem 0; color: var(--primary-blue);">HL Selection Topics:</h4>';
+                    const hlList = document.createElement('ul');
+                    hlList.style.cssText = 'margin: 0.5rem 0 0.5rem 1.2rem; line-height: 1.4;';
+                    
+                    hlCodes.forEach(code => {
+                        const detail = topicDetails[code];
+                        if (detail) {
+                            const li = document.createElement('li');
+                            const linkHtml = detail.link ? 
+                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue);">${detail.book}</a>` : 
+                                detail.book;
+                            li.innerHTML = `<strong>AHL ${code.replace('HL', '')}:</strong> ${detail.name} — ${linkHtml}`;
+                            hlList.appendChild(li);
+                        }
+                    });
+                    hlSection.appendChild(hlList);
+                    frag.appendChild(hlSection);
+                }
+
+                if (slCodes.length > 0) {
+                    const slSection = document.createElement('div');
+                    slSection.innerHTML = '<h4 style="margin: 0.5rem 0; color: var(--primary-blue);">SL Selection Topics:</h4>';
+                    const slList = document.createElement('ul');
+                    slList.style.cssText = 'margin: 0.5rem 0 0.5rem 1.2rem; line-height: 1.4;';
+                    
+                    slCodes.forEach(code => {
+                        const detail = topicDetails[code];
+                        if (detail) {
+                            const li = document.createElement('li');
+                            let linkHtml;
+                            if (detail.links) {
+                                // Multiple links for SL1.5
+                                linkHtml = `<a href="${detail.links[0]}" target="_blank" style="color: var(--primary-blue);">Hodder SL, Chapter 1A — Laws of exponents (pp. 4–10)</a> & <a href="${detail.links[1]}" target="_blank" style="color: var(--primary-blue);">Chapter 1C — Logarithms (pp. 14–21)</a>`;
+                            } else {
+                                linkHtml = `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue);">${detail.book}</a>`;
+                            }
+                            li.innerHTML = `<strong>${code}:</strong> ${detail.name} — ${linkHtml}`;
+                            slList.appendChild(li);
+                        }
+                    });
+                    slSection.appendChild(slList);
+                    frag.appendChild(slSection);
+                }
+
                 examScopeEl.innerHTML = '';
                 examScopeEl.appendChild(frag);
             }
