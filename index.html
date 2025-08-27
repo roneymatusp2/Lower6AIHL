@@ -3194,9 +3194,19 @@
                 const hlCodes = Array.from(scopeCodes).filter(code => code.startsWith('HL')).sort();
                 const slCodes = Array.from(scopeCodes).filter(code => code.startsWith('SL')).sort();
 
+                // Create two-column container
+                const columnsContainer = document.createElement('div');
+                columnsContainer.style.cssText = 'display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0.75rem 0;';
+                
+                // Add responsive breakpoint for mobile
+                const mediaQuery = window.matchMedia('(max-width: 768px)');
+                if (mediaQuery.matches) {
+                    columnsContainer.style.cssText = 'display: flex; flex-direction: column; gap: 1rem; margin: 0.75rem 0;';
+                }
+
                 if (hlCodes.length > 0) {
                     const hlSection = document.createElement('div');
-                    hlSection.style.cssText = 'background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; margin: 0.75rem 0;';
+                    hlSection.style.cssText = 'background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;';
                     hlSection.innerHTML = '<h4 style="margin: 0 0 0.75rem 0; color: var(--primary-blue); font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid var(--primary-blue); padding-bottom: 0.5rem;">📚 HL Selection Topics</h4>';
                     const hlList = document.createElement('ul');
                     hlList.style.cssText = 'margin: 0; padding: 0; list-style: none;';
@@ -3214,12 +3224,12 @@
                         }
                     });
                     hlSection.appendChild(hlList);
-                    frag.appendChild(hlSection);
+                    columnsContainer.appendChild(hlSection);
                 }
 
                 if (slCodes.length > 0) {
                     const slSection = document.createElement('div');
-                    slSection.style.cssText = 'background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 100%); border: 1px solid #d1fae5; border-radius: 8px; padding: 1rem; margin: 0.75rem 0;';
+                    slSection.style.cssText = 'background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 100%); border: 1px solid #d1fae5; border-radius: 8px; padding: 1rem;';
                     slSection.innerHTML = '<h4 style="margin: 0 0 0.75rem 0; color: var(--primary-green); font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid var(--primary-green); padding-bottom: 0.5rem;">📘 SL Selection Topics</h4>';
                     const slList = document.createElement('ul');
                     slList.style.cssText = 'margin: 0; padding: 0; list-style: none;';
@@ -3241,10 +3251,15 @@
                         }
                     });
                     slSection.appendChild(slList);
-                    frag.appendChild(slSection);
+                    columnsContainer.appendChild(slSection);
+                }
+                
+                // Add the columns container to the fragment
+                if (hlCodes.length > 0 || slCodes.length > 0) {
+                    frag.appendChild(columnsContainer);
                 }
 
-                // Add exercises link section
+                // Add exercises link section (full width below columns)
                 const exercisesSection = document.createElement('div');
                 exercisesSection.style.cssText = 'background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; border-radius: 8px; padding: 1rem; margin: 0.75rem 0; text-align: center;';
                 exercisesSection.innerHTML = `
