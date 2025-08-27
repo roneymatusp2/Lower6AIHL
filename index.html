@@ -3215,26 +3215,51 @@
                         const detail = topicDetails[code];
                         if (detail) {
                             const li = document.createElement('li');
-                            li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-green);';
+                            li.style.cssText = 'margin: 1rem 0; padding: 1.25rem; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240, 253, 244, 0.8) 100%); border-radius: 12px; border: 1px solid rgba(34, 197, 94, 0.2); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;';
+                            
+                            // Add hover effect
+                            li.addEventListener('mouseenter', () => {
+                                li.style.transform = 'translateY(-2px)';
+                                li.style.boxShadow = '0 8px 24px rgba(34, 197, 94, 0.15)';
+                            });
+                            li.addEventListener('mouseleave', () => {
+                                li.style.transform = 'translateY(0)';
+                                li.style.boxShadow = '0 4px 12px rgba(34, 197, 94, 0.1)';
+                            });
+                            
                             let linkHtml;
                             if (detail.links && detail.links.length > 1) {
-                                // Multiple links for SL1.5 with better visual separation
+                                // Multiple links for SL1.5 with enhanced visual separation
                                 linkHtml = `
-                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
-                                        <div style="background: rgba(34, 197, 94, 0.1); padding: 0.5rem; border-radius: 4px; border-left: 3px solid var(--primary-green);">
-                                            <span style="font-size: 0.85rem; color: var(--primary-green); font-weight: 700; display: block; margin-bottom: 0.25rem;">📊 CHAPTER 1A</span>
-                                            <a href="${detail.links[0]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">Laws of exponents (pp. 4–10)</a>
+                                    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;">
+                                        <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.15) 100%); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(34, 197, 94, 0.2); position: relative; transition: all 0.2s ease;" onmouseover="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(34, 197, 94, 0.2) 100%)'" onmouseout="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.15) 100%)'">
+                                            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--primary-green) 0%, rgba(34, 197, 94, 0.6) 100%); border-radius: 0 2px 2px 0;"></div>
+                                            <span style="font-size: 0.8rem; color: var(--primary-green); font-weight: 800; display: block; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">📊 CHAPTER 1A</span>
+                                            <a href="${detail.links[0]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease;" onmouseover="this.style.color='#059669'; this.style.textDecoration='underline'" onmouseout="this.style.color='var(--primary-green)'; this.style.textDecoration='none'">Laws of exponents (pp. 4–10)</a>
                                         </div>
-                                        <div style="background: rgba(34, 197, 94, 0.1); padding: 0.5rem; border-radius: 4px; border-left: 3px solid var(--primary-green);">
-                                            <span style="font-size: 0.85rem; color: var(--primary-green); font-weight: 700; display: block; margin-bottom: 0.25rem;">📈 CHAPTER 1C</span>
-                                            <a href="${detail.links[1]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">Logarithms (pp. 14–21)</a>
+                                        <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.15) 100%); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(34, 197, 94, 0.2); position: relative; transition: all 0.2s ease;" onmouseover="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(34, 197, 94, 0.2) 100%)'" onmouseout="this.style.background='linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.15) 100%)'">
+                                            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--primary-green) 0%, rgba(34, 197, 94, 0.6) 100%); border-radius: 0 2px 2px 0;"></div>
+                                            <span style="font-size: 0.8rem; color: var(--primary-green); font-weight: 800; display: block; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;">📈 CHAPTER 1C</span>
+                                            <a href="${detail.links[1]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s ease;" onmouseover="this.style.color='#059669'; this.style.textDecoration='underline'" onmouseout="this.style.color='var(--primary-green)'; this.style.textDecoration='none'">Logarithms (pp. 14–21)</a>
                                         </div>
                                     </div>
                                 `;
                             } else {
-                                linkHtml = `<a href="${detail.link}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">${detail.book}</a>`;
+                                linkHtml = `<a href="${detail.link}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green); transition: all 0.2s ease;" onmouseover="this.style.color='#059669'; this.style.borderBottomStyle='solid'" onmouseout="this.style.color='var(--primary-green)'; this.style.borderBottomStyle='dotted'">${detail.book}</a>`;
                             }
-                            li.innerHTML = `<div style="margin-bottom: 0.25rem;"><strong style="color: var(--primary-red); font-size: 0.95rem;">${code}:</strong> <span style="color: var(--text-main); font-weight: 600;">${detail.name}</span></div><div style="font-size: 0.9rem; color: var(--text-secondary);">📖 ${linkHtml}</div>`;
+                            li.innerHTML = `
+                                <div style="margin-bottom: 0.75rem; position: relative;">
+                                    <div style="position: absolute; top: -0.5rem; right: -0.5rem; width: 24px; height: 24px; background: linear-gradient(135deg, var(--primary-green) 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: white; font-weight: bold;">${code.replace('SL', '')}</div>
+                                    <strong style="color: var(--primary-red); font-size: 1rem; font-weight: 700;">${code}:</strong> 
+                                    <span style="color: var(--text-main); font-weight: 600; font-size: 1rem; line-height: 1.4;">${detail.name}</span>
+                                </div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                                    <span style="display: inline-flex; align-items: center; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-green);">
+                                        📖 Hodder SL Textbook
+                                    </span>
+                                    ${linkHtml}
+                                </div>
+                            `;
                             slList.appendChild(li);
                         }
                     });
@@ -3253,11 +3278,35 @@
                         const detail = topicDetails[code];
                         if (detail) {
                             const li = document.createElement('li');
-                            li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-blue);';
+                            li.style.cssText = 'margin: 1rem 0; padding: 1.25rem; background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248, 249, 255, 0.8) 100%); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden;';
+                            
+                            // Add hover effect
+                            li.addEventListener('mouseenter', () => {
+                                li.style.transform = 'translateY(-2px)';
+                                li.style.boxShadow = '0 8px 24px rgba(59, 130, 246, 0.15)';
+                            });
+                            li.addEventListener('mouseleave', () => {
+                                li.style.transform = 'translateY(0)';
+                                li.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.1)';
+                            });
+                            
                             const linkHtml = detail.link ? 
-                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-blue);">${detail.book}</a>` : 
+                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-blue); transition: all 0.2s ease;" onmouseover="this.style.color='#1d4ed8'; this.style.borderBottomStyle='solid'" onmouseout="this.style.color='var(--primary-blue)'; this.style.borderBottomStyle='dotted'">${detail.book}</a>` : 
                                 detail.book;
-                            li.innerHTML = `<div style="margin-bottom: 0.25rem;"><strong style="color: var(--primary-red); font-size: 0.95rem;">AHL ${code.replace('HL', '')}:</strong> <span style="color: var(--text-main); font-weight: 600;">${detail.name}</span></div><div style="font-size: 0.9rem; color: var(--text-secondary);">📖 ${linkHtml}</div>`;
+                            
+                            li.innerHTML = `
+                                <div style="margin-bottom: 0.75rem; position: relative;">
+                                    <div style="position: absolute; top: -0.5rem; right: -0.5rem; width: 24px; height: 24px; background: linear-gradient(135deg, var(--primary-blue) 0%, #1d4ed8 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: white; font-weight: bold;">${code.replace('HL', '')}</div>
+                                    <strong style="color: var(--primary-red); font-size: 1rem; font-weight: 700;">AHL ${code.replace('HL', '')}:</strong> 
+                                    <span style="color: var(--text-main); font-weight: 600; font-size: 1rem; line-height: 1.4;">${detail.name}</span>
+                                </div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                                    <span style="display: inline-flex; align-items: center; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-blue);">
+                                        📖 Hodder HL Textbook
+                                    </span>
+                                    ${linkHtml}
+                                </div>
+                            `;
                             hlList.appendChild(li);
                         }
                     });
@@ -3272,18 +3321,33 @@
 
                 // Add exercises link section (full width below columns)
                 const exercisesSection = document.createElement('div');
-                exercisesSection.style.cssText = 'background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; border-radius: 8px; padding: 1rem; margin: 0.75rem 0; text-align: center;';
+                exercisesSection.style.cssText = 'background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 6px 20px rgba(217, 119, 6, 0.15);';
+                
+                // Add decorative background pattern
                 exercisesSection.innerHTML = `
-                    <h4 style="margin: 0 0 0.5rem 0; color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">🎯 Assessment Preparation</h4>
-                    <div style="background: rgba(255,255,255,0.8); border-radius: 6px; padding: 0.75rem; border: 2px dashed var(--accent-gold);">
-                        <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin" 
-                           target="_blank" 
-                           style="color: var(--accent-gold); text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(196,154,0,0.1); border-radius: 6px; border: 1px solid var(--accent-gold); transition: all 0.3s ease;"
-                           onmouseover="this.style.background='var(--accent-gold)'; this.style.color='white';"
-                           onmouseout="this.style.background='rgba(196,154,0,0.1)'; this.style.color='var(--accent-gold)';">
-                            📝 EXERCISES FOR THE CHECKPOINT 1
-                        </a>
-                        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); font-style: italic;">Practice exercises specifically designed for your upcoming assessment</div>
+                    <div style="position: absolute; top: -10px; left: -10px; width: 40px; height: 40px; background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: -15px; right: -15px; width: 60px; height: 60px; background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+                    
+                    <div style="margin-bottom: 0.75rem; position: relative; z-index: 1;">
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(217, 119, 6, 0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem;">
+                            <span style="font-size: 1.2rem;">🎯</span>
+                            <span style="font-size: 1.1rem; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 0.5px;">Assessment Preparation</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); position: relative; z-index: 1; border: 2px solid transparent;" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(217, 119, 6, 0.4)'; this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(217, 119, 6, 0.3)'; this.style.borderColor='transparent'">
+                        <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 1.2rem;">📝</span>
+                            <span>EXERCISES FOR THE CHECKPOINT 1</span>
+                        </span>
+                    </a>
+                    
+                    <div style="margin-top: 1rem; font-size: 0.95rem; color: #92400e; font-style: italic; position: relative; z-index: 1;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                            <span>✨</span>
+                            <span>Practice exercises specifically designed for your upcoming assessment</span>
+                            <span>✨</span>
+                        </span>
                     </div>
                 `;
                 frag.appendChild(exercisesSection);
