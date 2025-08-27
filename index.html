@@ -3217,7 +3217,7 @@
                             const li = document.createElement('li');
                             li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-green);';
                             let linkHtml;
-                            if (detail.links) {
+                            if (detail.links && detail.links.length > 1) {
                                 // Multiple links for SL1.5
                                 linkHtml = `<a href="${detail.links[0]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">Hodder SL, Chapter 1A — Laws of exponents (pp. 4–10)</a> & <a href="${detail.links[1]}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green);">Chapter 1C — Logarithms (pp. 14–21)</a>`;
                             } else {
