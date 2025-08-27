@@ -3204,29 +3204,6 @@
                     columnsContainer.style.cssText = 'display: flex; flex-direction: column; gap: 1rem; margin: 0.75rem 0;';
                 }
 
-                if (hlCodes.length > 0) {
-                    const hlSection = document.createElement('div');
-                    hlSection.style.cssText = 'background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;';
-                    hlSection.innerHTML = '<h4 style="margin: 0 0 0.75rem 0; color: var(--primary-blue); font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid var(--primary-blue); padding-bottom: 0.5rem;">📚 HL Selection Topics</h4>';
-                    const hlList = document.createElement('ul');
-                    hlList.style.cssText = 'margin: 0; padding: 0; list-style: none;';
-                    
-                    hlCodes.forEach(code => {
-                        const detail = topicDetails[code];
-                        if (detail) {
-                            const li = document.createElement('li');
-                            li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-blue);';
-                            const linkHtml = detail.link ? 
-                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-blue);">${detail.book}</a>` : 
-                                detail.book;
-                            li.innerHTML = `<div style="margin-bottom: 0.25rem;"><strong style="color: var(--primary-red); font-size: 0.95rem;">AHL ${code.replace('HL', '')}:</strong> <span style="color: var(--text-main); font-weight: 600;">${detail.name}</span></div><div style="font-size: 0.9rem; color: var(--text-secondary);">📖 ${linkHtml}</div>`;
-                            hlList.appendChild(li);
-                        }
-                    });
-                    hlSection.appendChild(hlList);
-                    columnsContainer.appendChild(hlSection);
-                }
-
                 if (slCodes.length > 0) {
                     const slSection = document.createElement('div');
                     slSection.style.cssText = 'background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 100%); border: 1px solid #d1fae5; border-radius: 8px; padding: 1rem;';
@@ -3252,6 +3229,29 @@
                     });
                     slSection.appendChild(slList);
                     columnsContainer.appendChild(slSection);
+                }
+
+                if (hlCodes.length > 0) {
+                    const hlSection = document.createElement('div');
+                    hlSection.style.cssText = 'background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;';
+                    hlSection.innerHTML = '<h4 style="margin: 0 0 0.75rem 0; color: var(--primary-blue); font-size: 1.1rem; font-weight: 700; border-bottom: 2px solid var(--primary-blue); padding-bottom: 0.5rem;">📚 HL Selection Topics</h4>';
+                    const hlList = document.createElement('ul');
+                    hlList.style.cssText = 'margin: 0; padding: 0; list-style: none;';
+                    
+                    hlCodes.forEach(code => {
+                        const detail = topicDetails[code];
+                        if (detail) {
+                            const li = document.createElement('li');
+                            li.style.cssText = 'margin: 0.75rem 0; padding: 0.75rem; background: rgba(255,255,255,0.7); border-radius: 6px; border-left: 4px solid var(--primary-blue);';
+                            const linkHtml = detail.link ? 
+                                `<a href="${detail.link}" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-blue);">${detail.book}</a>` : 
+                                detail.book;
+                            li.innerHTML = `<div style="margin-bottom: 0.25rem;"><strong style="color: var(--primary-red); font-size: 0.95rem;">AHL ${code.replace('HL', '')}:</strong> <span style="color: var(--text-main); font-weight: 600;">${detail.name}</span></div><div style="font-size: 0.9rem; color: var(--text-secondary);">📖 ${linkHtml}</div>`;
+                            hlList.appendChild(li);
+                        }
+                    });
+                    hlSection.appendChild(hlList);
+                    columnsContainer.appendChild(hlSection);
                 }
                 
                 // Add the columns container to the fragment
