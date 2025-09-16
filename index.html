@@ -9,448 +9,7 @@
     <meta property="og:description" content="Complete units, topics, dates, and lesson timetable for the 2025–2026 academic year at St Paul's School.">
     <meta property="og:type" content="website">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.1/dist/umd/supabase.min.js"></script>
-    <style>
-        :root {
-            --primary-blue: #001D31;
-            --primary-red: #820021;
-            --primary-green: #002718;
-            --accent-gold: #c49a00;
-            --light-bg: #f8f9fa;
-            --text-main: #212529;
-            --text-secondary: #6c757d;
-            --border-color: #dee2e6;
-            --shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        html { scroll-behavior: smooth; }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--light-bg);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
-            color: white;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .navigation {
-            background: white;
-            padding: 1rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 120px;
-            z-index: 90;
-        }
-
-        .nav-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .nav-btn {
-            padding: 0.5rem 1rem;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .nav-btn:hover {
-            background: var(--primary-red);
-            transform: translateY(-2px);
-        }
-
-        .nav-btn:focus-visible {
-            outline: 3px solid #ffbf47;
-            outline-offset: 2px;
-        }
-
-        .nav-btn[aria-current="true"] {
-            background: var(--primary-red);
-        }
-
-        .unit-section {
-            background: white;
-            margin-bottom: 3rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            scroll-margin-top: 140px;
-        }
-
-        .unit-header {
-            background: var(--primary-blue);
-            color: white;
-            padding: 1.5rem;
-        }
-
-        .unit-header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .unit-meta {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.95rem;
-            opacity: 0.95;
-        }
-
-        .lesson-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .lesson-table th {
-            background: var(--light-bg);
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--primary-blue);
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .lesson-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: top;
-        }
-
-        .lesson-table tbody tr:nth-child(odd) {
-            background: #fcfdff;
-        }
-        .assessment-row td { background: #fff8e1; }
-        .assessment-badge { display:inline-block; background:#ffe08a; color:#7a4a00; border:1px solid #f59e0b; padding:0.1rem 0.4rem; border-radius:4px; font-size:0.85rem; font-weight:600; }
-
-        .lesson-date {
-            font-weight: bold;
-            color: var(--primary-red);
-            white-space: nowrap;
-        }
-
-        .syllabus-code {
-            display: inline-block;
-            background: #ffebed;
-            color: var(--primary-red);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin-right: 0.5rem;
-        }
-
-        .topic-title {
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .topic-content {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .tok-box {
-            background: linear-gradient(135deg, #f3e5ff 0%, #e5f3ff 100%);
-            border-left: 4px solid var(--primary-green);
-            padding: 0.8rem;
-            margin-top: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .tok-box strong {
-            color: var(--primary-green);
-        }
-
-        .connections-box {
-            background: #fff9e6;
-            border-left: 4px solid var(--accent-gold);
-            padding: 0.8rem;
-            margin-top: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .textbook-ref {
-            background: var(--light-bg);
-            padding: 0.5rem;
-            border-radius: 5px;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .textbook-ref strong {
-            color: var(--primary-blue);
-        }
-
-        @media print {
-            @page { margin: 12mm; }
-            .navigation { display: none !important; }
-            .unit-section { page-break-inside: avoid; break-inside: avoid; }
-            .header { position: static !important; box-shadow: none; }
-            * { color: #000 !important; background: transparent !important; }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .lesson-table {
-                font-size: 0.9rem;
-            }
-            
-            .nav-buttons {
-                flex-direction: column;
-            }
-            
-            .nav-btn {
-                width: 100%;
-            }
-
-            .unit-section {
-                overflow-x: auto;
-            }
-
-            .lesson-table {
-                min-width: 700px;
-            }
-        }
-
-        .skip-link {
-            position: absolute;
-            left: -999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-        .skip-link:focus {
-            left: 1rem;
-            top: 1rem;
-            width: auto;
-            height: auto;
-            background: #fff;
-            color: #000;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-            box-shadow: var(--shadow);
-        }
-
-        .search {
-            background: white;
-            padding: 1rem;
-            margin: 1rem 0 1.5rem 0;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        .search label { font-weight: 600; color: var(--primary-blue); margin-right: 0.75rem; }
-        .search input[type="search"] {
-            width: 100%;
-            max-width: 520px;
-            padding: 0.6rem 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.95rem;
-        }
-        .search small { color: var(--text-secondary); display: inline-block; margin-left: 0.5rem; }
-
-        .back-to-top {
-            color: #fff;
-            text-decoration: underline;
-            font-size: 0.9rem;
-            float: right;
-        }
-
-        /* Syllabus dashboard */
-        .syllabus-dashboard {
-            background: white;
-            margin-bottom: 3rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .syllabus-header {
-            background: var(--primary-blue);
-            color: white;
-            padding: 1.5rem;
-        }
-        .syllabus-header h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .syllabus-meta { display: flex; gap: 2rem; font-size: 0.95rem; opacity: 0.95; flex-wrap: wrap; }
-        .syllabus-body { padding: 1rem 1.5rem 1.5rem 1.5rem; }
-        .syllabus-summary { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin-bottom: 1rem; }
-        .progress-track { background: var(--light-bg); height: 12px; border-radius: 999px; overflow: hidden; }
-        .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-red), var(--accent-gold)); transition: width 0.6s ease; }
-        .syllabus-stats { color: var(--text-secondary); font-size: 0.95rem; }
-        .syllabus-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-        .syllabus-board { background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 0.75rem; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-        .topic-heading { margin: 0.25rem 0 0.25rem 0; color: var(--primary-blue); font-weight: 700; font-size: 1rem; letter-spacing: .2px; }
-        .level-title { color: var(--text-secondary); margin: 0.25rem 0 0.5rem 0; font-size: 0.9rem; font-weight: 600; }
-        .code-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 0.35rem; }
-        .code-pill { border: 1px solid rgba(0,0,0,0.08); background: #f8fafc; color: #0f172a; border-radius: 10px; padding: 0.55rem 0.4rem; height: 40px; font-weight: 700; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 0.88rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); cursor: pointer; transition: transform .1s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease, opacity .2s ease; }
-        .code-pill:hover, .code-pill:focus-visible { transform: translateY(-1px); outline: none; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
-        .code-pill.completed { background: #e9f8f0; color: #0b6b3a; border-color: rgba(16,185,129,0.25); }
-        .code-pill.past { opacity: 0.85; }
-        .code-pill.current { background: #fff1c7; color: #7a4a00; border-color: #f59e0b; box-shadow: 0 0 0 0 rgba(245,158,11,.6), 0 6px 14px rgba(245,158,11,.25); transform: translateY(-1px) scale(1.02); animation: pulseGlow 1.6s ease-in-out infinite; }
-        .code-pill.tile--sl { background: #eef2ff; color: #3730a3; }
-        .code-pill.tile--hl { background: #ecfdf5; color: #065f46; }
-        @keyframes pulseGlow { 0% { box-shadow: 0 0 0 0 rgba(255,208,138,.8);} 70% { box-shadow: 0 0 0 8px rgba(255,208,138,0);} 100% { box-shadow: 0 0 0 0 rgba(255,208,138,0);} }
-        .code-legend { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; color: var(--text-secondary); font-size: 0.9rem; margin: 0.4rem 0 0.2rem 0; }
-        .legend-dot { width: 12px; height: 12px; border-radius: 999px; display: inline-block; margin-right: 0.4rem; border: 1px solid rgba(0,0,0,0.15); }
-        .legend-sl { background: #eef2ff; border-color: #c7d2fe; }
-        .legend-hl { background: #ecfdf5; border-color: #a7f3d0; }
-        .legend-current { background: #fde68a; border-color: #fbbf24; }
-        .legend-completed { background: #bbf7d0; border-color: #34d399; }
-
-        /* Two-column layout: units left, dashboard right */
-        #main { display: grid; grid-template-columns: 1fr 340px; gap: 1rem; align-items: start; grid-auto-flow: dense; }
-        .unit-section { grid-column: 1; }
-        .syllabus-dashboard { grid-column: 2; grid-row: 1 / span 100; position: sticky; top: 140px; }
-        @media (max-width: 1200px) { #main { grid-template-columns: 1fr; } .syllabus-dashboard { grid-column: 1; position: static; } }
-
-        /* Smooth jump highlight */
-        .flash-highlight { animation: flashBg 2s ease-out 1; }
-        @keyframes flashBg { 0% { background: #fff3cd; } 100% { background: transparent; } }
-        .lesson-table tr { scroll-margin-top: 140px; }
-        .syllabus-actions { display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem; }
-        .cloud-sync { font-size: 0.9rem; color: var(--primary-blue); text-decoration: underline; cursor: pointer; }
-        .syllabus-footnote { color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem; }
-
-        /* density scales automatically via auto-fill */
-        .hidden { display: none !important; }
-
-        /* Exam countdown banner */
-        .exam-banner {
-            background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 50%, #fff7e6 100%);
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-            color: #7a4a00;
-            padding: 1.5rem 2rem;
-            margin: 1rem 0 1.5rem 0;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.15), 0 4px 16px rgba(0, 0, 0, 0.08);
-            display: none;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .exam-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #f59e0b, #f97316, #eab308);
-            border-radius: 16px;
-            padding: 2px;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            z-index: -1;
-        }
-        .exam-banner:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(245, 158, 11, 0.2), 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-        .exam-banner .headline { 
-            font-weight: 700; 
-            font-size: 1.2rem; 
-            background: linear-gradient(135deg, #7a4a00, #92400e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .exam-banner .headline::before {
-            content: '⏰';
-            font-size: 1.3rem;
-            -webkit-text-fill-color: initial;
-        }
-        .exam-banner .meta { 
-            color: #8a5a00; 
-            font-size: 0.95rem; 
-            margin-top: 0.25rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .exam-banner .meta::before {
-            content: '📅';
-            font-size: 1rem;
-        }
-        .exam-banner details { 
-            margin-top: 1rem;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 12px;
-            padding: 0.75rem;
-            border: 1px solid rgba(245, 158, 11, 0.2);
-        }
-        .exam-banner details summary {
-            font-weight: 600;
-            color: #7a4a00;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .exam-banner details summary::before {
-            content: '📋';
-            font-size: 1rem;
-        }
-        .exam-banner details summary:hover {
-            background: rgba(245, 158, 11, 0.1);
-            transform: translateX(4px);
-        }
-        .exam-banner details[open] summary {
-            background: rgba(245, 158, 11, 0.15);
-            margin-bottom: 0.75rem;
-        }
-    </style>
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -521,25 +80,25 @@
                                 <td><strong>Checkpoint 1</strong></td>
                                 <td>Monday, 1st September 2025</td>
                                 <td>10%</td>
-                                <td><em>Initial assessment covering HL & SL fundamentals</em></td>
+                                <td><em>Assessment covering: scientific notation, exponents, logarithms, approximation, bounds, and data scaling techniques</em></td>
                             </tr>
                             <tr>
                                 <td><strong>Exercise Book 1</strong></td>
                                 <td>Monday, 1st September 2025</td>
                                 <td>5%</td>
-                                <td><em>Initial coursework assessment</em></td>
+                                <td><em>Problem-solving portfolio focusing on Unit 1 topics</em></td>
                             </tr>
                             <tr>
                                 <td><strong>Checkpoint 2</strong></td>
-                                <td>Sunday, 29th September 2025</td>
+                                <td>Monday, 29th September 2025</td>
                                 <td>20%</td>
-                                <td><em>Comprehensive assessment: exponents, logarithms, and approximation</em></td>
+                                <td><em>Comprehensive assessment: sequences, finance, vectors, and planes (Units 2 & 3)</em></td>
                             </tr>
                             <tr>
                                 <td><strong>Exercise Book 2</strong></td>
-                                <td>Sunday, 29th September 2025</td>
+                                <td>Monday, 29th September 2025</td>
                                 <td>5%</td>
-                                <td><em>Problem-solving portfolio</em></td>
+                                <td><em>Problem-solving portfolio from Units 2 & 3</em></td>
                             </tr>
                             <tr>
                                 <td><strong>Checkpoint 1 (Re-assessment)</strong></td>
@@ -551,7 +110,7 @@
                                 <td><strong>Exercise Book 1 (Re-assessment)</strong></td>
                                 <td>Monday, 1st December 2025</td>
                                 <td>5%</td>
-                                <td><em>Coursework re-submission</em></td>
+                                <td><em>Portfolio re-submission opportunity</em></td>
                             </tr>
                             <tr>
                                 <td><strong>Exam Paper 1</strong></td>
@@ -601,8 +160,8 @@
                     <div class="textbook-ref">
                         <strong>September 2025</strong>
                         <ul style="margin:0.4rem 0 0 1.2rem;">
-                            <li>Monday, 1st September 2025 — Checkpoint 1 & Exercise Book 1 (HL & SL fundamentals)</li>
-                            <li>Sunday, 29th September 2025 — Checkpoint 2 & Exercise Book 2 (comprehensive assessment)</li>
+                            <li>Monday, 1st September 2025 — Checkpoint 1 & Exercise Book 1 (scientific notation, exponents, logarithms, approximation)</li>
+                            <li>Monday, 29th September 2025 — Checkpoint 2 & Exercise Book 2 (sequences, finance, vectors, and planes)</li>
                         </ul>
                         <strong style="display:block; margin-top:0.6rem;">November 2025</strong>
                         <ul style="margin:0.4rem 0 0 1.2rem;">
@@ -649,8 +208,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Monday, 1st September 2025</td><td>First formal assessment</td><td>Establishes baseline for HL & SL topics</td></tr>
-                            <tr><td>Sunday, 29th September 2025</td><td>Checkpoint 2</td><td>Comprehensive assessment period</td></tr>
+                            <tr><td>Monday, 1st September 2025</td><td>First formal assessment</td><td>Establishes baseline for fundamental mathematical concepts</td></tr>
+                            <tr><td>Monday, 29th September 2025</td><td>Checkpoint 2</td><td>Comprehensive assessment period</td></tr>
                             <tr><td>Monday, 10th–Tuesday, 19th November 2025</td><td>Exam Papers period</td><td>60% of RR1 grade (HL & SL separation)</td></tr>
                             <tr><td>Monday, 1st December 2025</td><td>Re-assessment period</td><td>Second opportunity for improvement</td></tr>
                             <tr><td>Monday, 2nd March 2026</td><td>Checkpoint 3</td><td>Mid-year integration assessment</td></tr>
@@ -765,7 +324,7 @@
                             <div class="topic-content">
                                 Calculating measurement errors including rounding errors and measurement limitations. 
                                 Example: Finding maximum percentage error in the area of a circle if radius measured is 2.5 cm to one decimal place.
-                                Students should recognize whether results are reasonable (e.g., lengths cannot be negative).
+                                Students should recognise whether results are reasonable (e.g., lengths cannot be negative).
                             </div>
                         </td>
                     </tr>
@@ -782,6 +341,9 @@
                             </div>
                             <div class="topic-content">
                                 5³×5⁻⁶=5⁻³, 6⁴÷6³=6, (2³)⁻⁴=2⁻¹², (2x)⁴=16x⁴, 2x⁻³=2/x³
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 1A — Laws of exponents, pp. 4–10
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Calculation of pH and buffer solutions in chemistry
@@ -806,6 +368,9 @@
                                 Numerical evaluation of logarithms using technology. 
                                 Awareness that aˣ=b is equivalent to log_a(b)=x, that b>0, and log_e(x)=ln(x).
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 1C — Logarithms, pp. 14–21
+                            </div>
                         </td>
                     </tr>
                     
@@ -823,7 +388,10 @@
                                 Log of a product, log of a quotient, log of a power, change of base. 
                                 Exponential equations that can be expressed using the same base or not. 
                                 Link to: scaling large and small numbers (AIHL 2.10) and logarithmic and exponential graphs.
-                                Including linearization and interpretation of log-log and semi-log graphs.
+                                Including linearisation and interpretation of log-log and semi-log graphs.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 1B — Logarithms, pp. 6–11
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> pH calculations, buffer calculations, finding activation energy from experimental data in chemistry
@@ -847,6 +415,9 @@
                             <div class="topic-content">
                                 Simplifying expressions, both numerically and algebraically, involving rational exponents.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 1A — Laws of exponents with rational exponents, pp. 4–5
+                            </div>
                         </td>
                     </tr>
                     
@@ -863,6 +434,9 @@
                             <div class="topic-content">
                                 Advanced techniques for solving exponential equations using logarithms.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 1A — Laws of exponents with rational exponents, pp. 4–5
+                            </div>
                         </td>
                     </tr>
                     
@@ -877,9 +451,13 @@
                                 Topics 10-11: Scaling & Scientific Notation
                             </div>
                             <div class="topic-content">
-                                Scaling very large or small numbers using logarithms. Linearizing data to determine exponential or power relationships.
+                                Scaling very large or small numbers using logarithms. Linearising data to determine exponential or power relationships.
                                 Operations with numbers in the form a×10ᵏ where 1≤a<10 and k is an integer.
                                 Note: Calculator notation (e.g., 5.2E30) is not acceptable; must be written as 5.2×10³⁰.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 1B — Operations with numbers in the form a×10^k, pp. 11–13<br>
+                                <strong>Textbook (HL):</strong> Chapter 1D — Using logarithmic scales on graphs, pp. 15–29
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Growth of bacteria, traffic to websites, exponential graphs, pH scale, experimental work
@@ -943,6 +521,9 @@
                             <div class="topic-content">
                                 Real-world applications including simple interest calculations.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 2A — Arithmetic sequences and series, pp. 24–32
+                            </div>
                         </td>
                     </tr>
                     
@@ -959,6 +540,9 @@
                             <div class="topic-content">
                                 Analysis, interpretation and prediction where a model is not perfectly arithmetic.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 2A — Arithmetic sequences and series, pp. 29–32
+                            </div>
                         </td>
                     </tr>
                     
@@ -973,8 +557,11 @@
                                 Topic 14: Geometric Sequences and Series
                             </div>
                             <div class="topic-content">
-                                Use of formulae for nth term and sum of first n terms of geometric sequence.
+                                Use of formulae for nth term and sum of first n terms of geometric sequence. 
                                 Use of sigma notation for sums of geometric sequences.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 2B — Geometric sequences and series, pp. 33–38
                             </div>
                         </td>
                     </tr>
@@ -993,6 +580,9 @@
                                 Applications of geometric sequences. Compound interest and annual depreciation.
                                 Financial applications using technology (GDC financial solver).
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 2C — Financial applications, pp. 39–42
+                            </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Population growth models, radioactive decay, investment planning
                             </div>
@@ -1007,11 +597,15 @@
                         <td>
                             <div class="topic-title">
                                 <span class="syllabus-code">SL1.7 and HL1.11</span>
-                                Topics 17-18: Amortization, Annuities & Infinite Series
+                                Topics 17-18: Amortisation, Annuities & Infinite Series
                             </div>
                             <div class="topic-content">
-                                Amortization and annuities using technology. 
+                                Amortisation and annuities using technology. 
                                 Sum of infinite convergent geometric sequences (|r| < 1).
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (SL):</strong> Chapter 11B — Amortisation and annuities, pp. 287–291<br>
+                                <strong>Textbook (HL):</strong> Chapter 1C — Sum of infinite geometric sequences, pp. 12–14
                             </div>
                         </td>
                     </tr>
@@ -1055,6 +649,9 @@
                                 Components and column representation. The zero vector and -v.
                                 Algebraic and geometric approaches to sum, difference, and scalar multiplication.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 2A — Vectors and scalars, pp. 32–44
+                            </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Vector sums and resultants in physics. Position tracking for peaceful and harmful purposes.
                             </div>
@@ -1072,11 +669,14 @@
                         <td>
                             <div class="topic-title">
                                 <span class="syllabus-code">HL3.10</span>
-                                Topics 2-3: Position Vectors and Normalizing
+                                Topics 2-3: Position Vectors and Normalising
                             </div>
                             <div class="topic-content">
-                                Position vectors OA = a. Rescaling and normalizing vectors.
+                                Position vectors OA = a. Rescaling and normalising vectors.
                                 Finding unit vectors in the direction of a given vector.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 2A — Position vectors and normalising, pp. 39–40
                             </div>
                         </td>
                     </tr>
@@ -1095,6 +695,9 @@
                                 Vector equation of a line: r = a + λb.
                                 Determining whether lines are parallel, intersecting, or skew.
                                 Finding points of intersection.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 2B — Vector equations of lines, pp. 45–51
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Ray tracing in computer graphics, GPS navigation systems
@@ -1117,6 +720,9 @@
                                 Angle between vectors and lines. Perpendicular vectors.
                                 Applications to work done by a force.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 2D — Scalar product, pp. 58–63
+                            </div>
                         </td>
                     </tr>
                     
@@ -1134,6 +740,9 @@
                                 Definition and properties of vector (cross) product.
                                 Area of parallelogram and triangle. Torque calculations.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 2D — Vector product, pp. 64–68
+                            </div>
                         </td>
                     </tr>
                     
@@ -1150,6 +759,9 @@
                             <div class="topic-content">
                                 Cartesian and vector equations of planes.
                                 Intersections of lines and planes, intersection of planes.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Note:</strong> This topic is not covered in the provided HL book.
                             </div>
                         </td>
                     </tr>
@@ -1207,6 +819,9 @@
                             <div class="topic-content">
                                 Properties: associativity, non-commutativity.
                                 Identity matrix In. Conditions for AB to exist.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> Chapter 3A — Matrix multiplication, pp. 88–90
                             </div>
                         </td>
                     </tr>
@@ -1296,10 +911,10 @@
                         <td>
                             <div class="topic-title">
                                 <span class="syllabus-code">HL1.16</span>
-                                Topics 12-13: Diagonalization and Powers
+                                Topics 12-13: Diagonalisation and Powers
                             </div>
                             <div class="topic-content">
-                                Diagonalization of 2×2 matrices. 
+                                Diagonalisation of 2×2 matrices. 
                                 Applications to finding powers of matrices.
                             </div>
                         </td>
@@ -1445,7 +1060,7 @@
                             <div class="topic-content">
                                 Forms: f(x) = ax² + bx + c, vertex form, factored form.
                                 Axis of symmetry, vertex, minimum/maximum values.
-                                Quadratic models and optimization.
+                                Quadratic models and optimisation.
                             </div>
                         </td>
                     </tr>
@@ -1866,7 +1481,7 @@
                         <td>
                             <div class="topic-title">
                                 <span class="syllabus-code">HL4.13</span>
-                                Topics 6-7: Linearization Techniques
+                                Topics 6-7: Linearisation Techniques
                             </div>
                             <div class="topic-content">
                                 Logarithmic transformations for exponential and power relationships.
@@ -2083,7 +1698,7 @@
                             </div>
                             <div class="topic-content">
                                 Properties of normal distribution. Standard normal N(0,1).
-                                Standardization (z-scores). Inverse normal calculations.
+                                Standardisation (z-scores). Inverse normal calculations.
                             </div>
                         </td>
                     </tr>
@@ -2558,10 +2173,10 @@
                         <td>
                             <div class="topic-title">
                                 <span class="syllabus-code">SL5.9</span>
-                                Topics 13-14: Optimization
+                                Topics 13-14: Optimisation
                             </div>
                             <div class="topic-content">
-                                Optimization problems in context.
+                                Optimisation problems in context.
                                 Second derivative test.
                             </div>
                         </td>
