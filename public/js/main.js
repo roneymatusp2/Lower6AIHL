@@ -382,6 +382,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const exercisesSection = document.createElement('div');
         exercisesSection.style.cssText = 'background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 6px 20px rgba(217, 119, 6, 0.15);';
         
+        // Determine which assessment is upcoming and set appropriate link and text
+        const now = new Date();
+        const nextExam = getNextExam(now);
+        let practiceLink = '';
+        let assessmentTitle = '';
+        let practiceMessage = 'Keep consolidating class notes, textbook examples, and completed exercise book tasks.';
+
+        if (nextExam && nextExam.label) {
+            if (nextExam.label === 'Checkpoint 1') {
+                practiceLink = 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin';
+                assessmentTitle = 'EXERCISES FOR THE CHECKPOINT 1';
+                practiceMessage = 'Practice exercises specifically designed for your upcoming assessment';
+            } else if (nextExam.label === 'Checkpoint 2') {
+                practiceLink = 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ca9be7003d44dfe93e/view?project=68ae66cf002308df352a&mode=admin';
+                assessmentTitle = 'PRACTICE PAPER · CHECKPOINT 2';
+                practiceMessage = 'Revision materials for Checkpoint 2 will be shared shortly.';
+            } else {
+                // Default fallback for other assessments
+                practiceLink = '';
+                assessmentTitle = '';
+                practiceMessage = 'Revision materials will be shared shortly.';
+            }
+        }
+
         // Add decorative background pattern
         exercisesSection.innerHTML = `
             <div style="position: absolute; top: -10px; left: -10px; width: 40px; height: 40px; background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
@@ -390,21 +414,28 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="margin-bottom: 0.75rem; position: relative; z-index: 1;">
                 <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(217, 119, 6, 0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem;">
                     <span style="font-size: 1.2rem;">🎯</span>
-                    <span style="font-size: 1.1rem; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 0.5px;">Assessment Preparation</span>
+                    <span style="font-size: 1.1rem; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 0.5px;">Assessment Preparation · ${nextExam ? nextExam.label : 'UPCOMING'}</span>
                 </div>
             </div>
             
-            <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); position: relative; z-index: 1; border: 2px solid transparent;" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(217, 119, 6, 0.4)'; this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(217, 119, 6, 0.3)'; this.style.borderColor='transparent'">
-                <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.2rem;">📝</span>
-                    <span>EXERCISES FOR THE CHECKPOINT 1</span>
-                </span>
-            </a>
+            ${practiceLink ? `
+                <a href="${practiceLink}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); position: relative; z-index: 1; border: 2px solid transparent;" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(217, 119, 6, 0.4)'; this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(217, 119, 6, 0.3)'; this.style.borderColor='transparent'">
+                    <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">📝</span>
+                        <span>${assessmentTitle}</span>
+                    </span>
+                </a>
+            ` : `
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center; background: rgba(217, 119, 6, 0.15); color: #92400e; padding: 0.75rem 1.5rem; border-radius: 10px; font-weight: 600; position: relative; z-index: 1;">
+                    <span style="font-size: 1.1rem;">⏳</span>
+                    <span>Revision materials will be shared shortly.</span>
+                </div>
+            `}
             
             <div style="margin-top: 1rem; font-size: 0.95rem; color: #92400e; font-style: italic; position: relative; z-index: 1;">
                 <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
                     <span>✨</span>
-                    <span>Practice exercises specifically designed for your upcoming assessment</span>
+                    <span>${practiceMessage}</span>
                     <span>✨</span>
                 </span>
             </div>
