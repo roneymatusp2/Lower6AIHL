@@ -23,38 +23,59 @@
         <div id="exam-banner" class="exam-banner" role="status" aria-live="polite">
             <div class="headline">Next assessment in <span id="exam-days">0</span> day(s). Please prepare.</div>
             <div class="meta">Date: <span id="exam-date"></span> · Assessment: <span id="exam-window"></span></div>
-            <details>
-                <summary>Click to review likely content</summary>
+            <div class="exam-spotlight" aria-label="Revision and lesson overview">
+                <section class="spotlight-card spotlight-card--action" id="assessment-spotlight" aria-live="polite" role="button" tabindex="0" aria-controls="revision-guide" aria-expanded="false">
+                    <header class="spotlight-header">
+                        <span class="spotlight-icon" aria-hidden="true">🎓</span>
+                        <h3>Revision focus</h3>
+                    </header>
+                    <p class="spotlight-subtitle" id="assessment-subtitle">We will share the key themes for the next checkpoint here.</p>
+                    <ul class="spotlight-list" id="assessment-topic-list" aria-label="Upcoming assessment topics"></ul>
+                </section>
+                <section class="spotlight-card" id="lesson-spotlight" aria-live="polite">
+                    <header class="spotlight-header">
+                        <span class="spotlight-icon" aria-hidden="true">📍</span>
+                        <h3>Today's lesson</h3>
+                    </header>
+                    <p class="spotlight-subtitle" id="lesson-subtitle">We will highlight today's focus as soon as the timetable rolls over.</p>
+                    <div class="spotlight-lesson" id="lesson-spotlight-body"></div>
+                    <button class="spotlight-button" type="button" id="lesson-jump-btn" hidden>Go to lesson</button>
+                </section>
+            </div>
+            <details id="revision-guide">
+                <summary>Open for the full revision guide</summary>
                 <div id="exam-scope" style="margin-top: .5rem;">
                     <!-- This content is dynamically populated by the collectScope() function in JavaScript -->
                     <!-- It will show the full syllabus names, textbook references, and page numbers for upcoming assessments -->
                 </div>
             </details>
         </div>
-        <nav class="navigation" aria-label="Units navigation">
-            <div class="nav-buttons">
-                <a class="nav-btn" href="#unit1">Unit 1: Rounding and Logarithms</a>
-                <a class="nav-btn" href="#unit2">Unit 2: Sequences and Finance</a>
-                <a class="nav-btn" href="#unit3">Unit 3: Vectors and Planes</a>
-                <a class="nav-btn" href="#unit4">Unit 4: Matrices</a>
-                <a class="nav-btn" href="#unit5">Unit 5: Modelling and Functions 1</a>
-                <a class="nav-btn" href="#unit6">Unit 6: Trigonometry</a>
-                <a class="nav-btn" href="#unit7">Unit 7: Statistics</a>
-                <a class="nav-btn" href="#unit8">Unit 8: Bivariate Data</a>
-                <a class="nav-btn" href="#unit9">Unit 9: Probability</a>
-                <a class="nav-btn" href="#unit10">Unit 10: Inferential Statistics</a>
-                <a class="nav-btn" href="#unit11">Unit 11: Modelling and Functions 2</a>
-                <a class="nav-btn" href="#unit12">Unit 12: Calculus 1</a>
-                <a class="nav-btn" href="#assessments">Assessments</a>
-            </div>
-        </nav>
-        <div class="search" role="search">
-            <label for="lesson-search">Search lessons and topics</label>
-            <input type="search" id="lesson-search" name="lesson-search" placeholder="Type keywords, e.g. vectors, regression, logarithms" aria-describedby="search-help search-status" />
-            <small id="search-help">Results update as you type.</small>
-            <div id="search-status" class="search-status" aria-live="polite" style="margin-top: 0.5rem; color: var(--text-secondary);"></div>
-        </div>
-        <main id="main">
+        <div class="content-layout">
+            <div class="primary-column">
+                <nav class="navigation" aria-label="Units navigation">
+                    <div class="nav-buttons">
+                        <a class="nav-btn" href="#unit1">Unit 1: Rounding and Logarithms</a>
+                        <a class="nav-btn" href="#unit2">Unit 2: Sequences and Finance</a>
+                        <a class="nav-btn" href="#unit3">Unit 3: Vectors and Planes</a>
+                        <a class="nav-btn" href="#unit4">Unit 4: Matrices</a>
+                        <a class="nav-btn" href="#unit5">Unit 5: Modelling and Functions 1</a>
+                        <a class="nav-btn" href="#unit6">Unit 6: Trigonometry</a>
+                        <a class="nav-btn" href="#unit7">Unit 7: Statistics</a>
+                        <a class="nav-btn" href="#unit8">Unit 8: Bivariate Data</a>
+                        <a class="nav-btn" href="#unit9">Unit 9: Probability</a>
+                        <a class="nav-btn" href="#unit10">Unit 10: Inferential Statistics</a>
+                        <a class="nav-btn" href="#unit11">Unit 11: Modelling and Functions 2</a>
+                        <a class="nav-btn" href="#unit12">Unit 12: Calculus 1</a>
+                        <a class="nav-btn" href="#assessments">Assessments</a>
+                    </div>
+                </nav>
+                <div class="search" role="search">
+                    <label for="lesson-search">Search lessons and topics</label>
+                    <input type="search" id="lesson-search" name="lesson-search" placeholder="Type keywords, e.g. vectors, regression, logarithms" aria-describedby="search-help search-status" />
+                    <small id="search-help">Results update as you type.</small>
+                    <div id="search-status" class="search-status" aria-live="polite" style="margin-top: 0.5rem; color: var(--text-secondary);"></div>
+                </div>
+                <main id="main">
             <!-- ASSESSMENTS -->
             <section class="unit-section" id="assessments">
                 <div class="unit-header">
@@ -231,44 +252,6 @@
                 </div>
                 <p style="padding: 0 1.5rem 1rem 1.5rem;"><a class="back-to-top" href="#top">Back to top</a></p>
             </section>
-            <section class="syllabus-dashboard" id="syllabus">
-                <div class="syllabus-header">
-                    <h2>IBDP Mathematics: Applications and Interpretation — Syllabus Coverage</h2>
-                    <div class="syllabus-meta">
-                        <span>Total items: <strong id="syllabus-total">0</strong></span>
-                        <span>Completed: <strong id="syllabus-completed">0</strong></span>
-                        <span>Remaining: <strong id="syllabus-remaining">0</strong></span>
-                    </div>
-                </div>
-                <div class="syllabus-body">
-                    <div class="syllabus-summary">
-                        <div class="syllabus-stats">Overall coverage</div>
-                        <div class="progress-track" aria-hidden="true"><div id="syllabus-progress" class="progress-fill"></div></div>
-                    </div>
-                    <div class="syllabus-grid" id="syllabus-grid">
-                        <!-- Populated by script: compact code grid -->
-                    </div>
-                    <div class="syllabus-actions">
-                        <button class="nav-btn" id="mark-visible-complete" type="button">Mark all visible as complete</button>
-                        <button class="nav-btn" id="reset-completion" type="button" style="background: #6c757d;">Reset</button>
-                        <!-- Hidden Supabase credentials for background sync only -->
-                        <input type="hidden" id="spb-url" value="https://gjvtncdjcslnkfctqnfy.supabase.co" />
-                        <input type="hidden" id="spb-key" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdnRuY2RqY3NsbmtmY3RxbmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM5NzM0MDEsImV4cCI6MjA1OTU0OTQwMX0.AzALxUUvYLJJtDkvxt7efJ7bGxeKmzOs-fT5bQOndiU" />
-                        <small id="spb-status" aria-live="polite" class="hidden"></small>
-                        <label for="auto-mark" class="level-title" style="margin-left: auto; color: var(--primary-blue);">
-                            <input type="checkbox" id="auto-mark" checked style="margin-right: 0.4rem;"> Auto-mark by date
-                        </label>
-                    </div>
-                    <div class="code-legend">
-                        <span><span class="legend-dot legend-sl"></span>SL</span>
-                        <span><span class="legend-dot legend-hl"></span>HL</span>
-                        <span><span class="legend-dot legend-current"></span>Current week</span>
-                        <span><span class="legend-dot legend-completed"></span>Completed</span>
-                    </div>
-                    <p class="syllabus-footnote">Progress is saved locally in your browser.</p>
-                </div>
-            </section>
-
         <!-- UNIT 1: ROUNDING, EXPONENTIAL and LOGARITHMIC EXPRESSIONS and EQUATIONS -->
         <section class="unit-section" id="unit1">
             <div class="unit-header">
@@ -605,7 +588,7 @@
                             </div>
                             <div class="textbook-ref">
                                 <strong>Textbook (SL):</strong> Chapter 11B — Amortisation and annuities, pp. 287–291<br>
-                                <strong>Textbook (HL):</strong> Chapter 1C — Sum of infinite geometric sequences, pp. 12–14
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca228a00220432800f/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 1C — Sum of infinite geometric sequences, pp. 12–14</a>
                             </div>
                         </td>
                     </tr>
@@ -650,7 +633,7 @@
                                 Algebraic and geometric approaches to sum, difference, and scalar multiplication.
                             </div>
                             <div class="textbook-ref">
-                                <strong>Textbook (HL):</strong> Chapter 2A — Vectors and scalars, pp. 32–44
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca229e001bf7605b44/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 2A — Vectors and scalars, pp. 32–44</a>
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Vector sums and resultants in physics. Position tracking for peaceful and harmful purposes.
@@ -676,7 +659,7 @@
                                 Finding unit vectors in the direction of a given vector.
                             </div>
                             <div class="textbook-ref">
-                                <strong>Textbook (HL):</strong> Chapter 2A — Position vectors and normalising, pp. 39–40
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca229e001bf7605b44/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 2A — Position vectors and normalising, pp. 39–40</a>
                             </div>
                         </td>
                     </tr>
@@ -697,7 +680,7 @@
                                 Finding points of intersection.
                             </div>
                             <div class="textbook-ref">
-                                <strong>Textbook (HL):</strong> Chapter 2B — Vector equations of lines, pp. 45–51
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22b1001dc1ba6fa4/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 2B — Vector equations of lines, pp. 45–51</a>
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Ray tracing in computer graphics, GPS navigation systems
@@ -721,7 +704,7 @@
                                 Applications to work done by a force.
                             </div>
                             <div class="textbook-ref">
-                                <strong>Textbook (HL):</strong> Chapter 2D — Scalar product, pp. 58–63
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22df000faa3b2c5e/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 2D — Scalar product, pp. 58–63</a>
                             </div>
                         </td>
                     </tr>
@@ -741,7 +724,7 @@
                                 Area of parallelogram and triangle. Torque calculations.
                             </div>
                             <div class="textbook-ref">
-                                <strong>Textbook (HL):</strong> Chapter 2D — Vector product, pp. 64–68
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22df000faa3b2c5e/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 2D — Vector product, pp. 64–68</a>
                             </div>
                         </td>
                     </tr>
@@ -821,7 +804,7 @@
                                 Identity matrix In. Conditions for AB to exist.
                             </div>
                             <div class="textbook-ref">
-                                <strong>Textbook (HL):</strong> Chapter 3A — Matrix multiplication, pp. 88–90
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22fc002c3338a1f6/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3A — Matrix multiplication, pp. 88–90</a>
                             </div>
                         </td>
                     </tr>
@@ -839,6 +822,9 @@
                             <div class="topic-content">
                                 Determinant of 2×2 matrices. Singular matrices.
                                 Inverse of non-singular 2×2 matrices.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca2376003dcec4b134/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3B — Determinants and inverses</a>
                             </div>
                         </td>
                     </tr>
@@ -863,6 +849,9 @@
                                 Determinant of 3×3 matrices. Properties of determinants.
                                 Inverse of non-singular 3×3 matrices using technology.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca2376003dcec4b134/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3B — Determinants and inverses</a>
+                            </div>
                         </td>
                     </tr>
                     
@@ -880,6 +869,9 @@
                                 Solving systems using inverse matrices: AX = B ⟹ X = A⁻¹B.
                                 Consistent and inconsistent systems.
                             </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca233e00304ecb071b/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3C — Solutions of systems of equations using the inverse matrix</a>
+                            </div>
                         </td>
                     </tr>
                     
@@ -896,6 +888,9 @@
                             <div class="topic-content">
                                 Characteristic polynomial and equation.
                                 Finding eigenvalues and corresponding eigenvectors.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca238d003c22646667/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3D — Eigenvalues and eigenvectors</a>
                             </div>
                             <div class="connections-box">
                                 <strong>Connections:</strong> Population dynamics, Google PageRank algorithm
@@ -916,6 +911,9 @@
                             <div class="topic-content">
                                 Diagonalisation of 2×2 matrices. 
                                 Applications to finding powers of matrices.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca238d003c22646667/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3D — Eigenvalues and eigenvectors</a>
                             </div>
                         </td>
                     </tr>
@@ -950,6 +948,9 @@
                             <div class="topic-content">
                                 Transition matrices, Markov chains, steady states.
                                 Applications in economics and computer graphics.
+                            </div>
+                            <div class="textbook-ref">
+                                <strong>Textbook (HL):</strong> <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca238d003c22646667/view?project=nyc-68ae66cf002308df352a" target="_blank" rel="noopener">Chapter 3D — Eigenvalues and eigenvectors</a>
                             </div>
                         </td>
                     </tr>
@@ -2306,6 +2307,47 @@
 
         <!-- Footer -->
         </main>
+            </div>
+            <aside class="syllabus-column" aria-labelledby="syllabus-title">
+                <section class="syllabus-dashboard" id="syllabus">
+                    <div class="syllabus-header">
+                        <h2 id="syllabus-title">IBDP Mathematics: Applications and Interpretation — Syllabus Coverage</h2>
+                        <div class="syllabus-meta">
+                            <span>Total items: <strong id="syllabus-total">0</strong></span>
+                            <span>Completed: <strong id="syllabus-completed">0</strong></span>
+                            <span>Remaining: <strong id="syllabus-remaining">0</strong></span>
+                        </div>
+                    </div>
+                    <div class="syllabus-body">
+                        <div class="syllabus-summary">
+                            <div class="syllabus-stats">Overall coverage</div>
+                            <div class="progress-track" aria-hidden="true"><div id="syllabus-progress" class="progress-fill"></div></div>
+                        </div>
+                        <div class="syllabus-grid" id="syllabus-grid">
+                            <!-- Populated by script: compact code grid -->
+                        </div>
+                        <div class="syllabus-actions">
+                            <button class="nav-btn" id="mark-visible-complete" type="button">Mark all visible as complete</button>
+                            <button class="nav-btn" id="reset-completion" type="button" style="background: #6c757d;">Reset</button>
+                            <!-- Hidden Supabase credentials for background sync only -->
+                            <input type="hidden" id="spb-url" value="https://gjvtncdjcslnkfctqnfy.supabase.co" />
+                            <input type="hidden" id="spb-key" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqdnRuY2RqY3NsbmtmY3RxbmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM5NzM0MDEsImV4cCI6MjA1OTU0OTQwMX0.AzALxUUvYLJJtDkvxt7efJ7bGxeKmzOs-fT5bQOndiU" />
+                            <small id="spb-status" aria-live="polite" class="hidden"></small>
+                            <label for="auto-mark" class="level-title" style="margin-left: auto; color: var(--primary-blue);">
+                                <input type="checkbox" id="auto-mark" checked style="margin-right: 0.4rem;"> Auto-mark by date
+                            </label>
+                        </div>
+                        <div class="code-legend">
+                            <span><span class="legend-dot legend-sl"></span>SL</span>
+                            <span><span class="legend-dot legend-hl"></span>HL</span>
+                            <span><span class="legend-dot legend-current"></span>Current week</span>
+                            <span><span class="legend-dot legend-completed"></span>Completed</span>
+                        </div>
+                        <p class="syllabus-footnote">Progress is saved locally in your browser.</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
         <footer style="background: var(--primary-blue); color: white; padding: 2rem; text-align: center; margin-top: 3rem;">
             <p>© 2025–2026 St Paul's School | Mathematics Department</p>
             <p>IB Mathematics: Applications and Interpretation Higher Level</p>
@@ -2347,7 +2389,7 @@
                 if (visible[0]) {
                     setActive(visible[0].target);
                 }
-            }, { root: null, rootMargin: '-120px 0px 0px 0px', threshold: [0.25, 0.5, 0.75, 1] });
+            }, { root: null, rootMargin: '-80px 0px 0px 0px', threshold: [0.25, 0.5, 0.75, 1] });
 
             document.querySelectorAll('.unit-section').forEach(section => observer.observe(section));
 
@@ -2727,6 +2769,14 @@
             const examDateEl = document.getElementById('exam-date');
             const examWindowEl = document.getElementById('exam-window');
             const examScopeEl = document.getElementById('exam-scope');
+            const revisionDetailsEl = examBanner?.querySelector('details') || null;
+            const assessmentSpotlight = document.getElementById('assessment-spotlight');
+            const assessmentListEl = document.getElementById('assessment-topic-list');
+            const assessmentSubtitleEl = document.getElementById('assessment-subtitle');
+            const lessonSubtitleEl = document.getElementById('lesson-subtitle');
+            const lessonSpotlightBody = document.getElementById('lesson-spotlight-body');
+            const lessonJumpBtn = document.getElementById('lesson-jump-btn');
+            let lessonTargetRow = null;
 
             // Define assessment events (checkpoints and formal exam window)
             const EXAMS = [
@@ -2755,7 +2805,16 @@
                 return `${s1} ${m1} – ${s2}`;
             }
 
-            function collectScope(untilDate) {
+            function collectScope(exam) {
+                if (!exam) return;
+                const untilDate = exam.start;
+                const examLabel = exam.label;
+                const examEnd = exam.end || exam.start;
+                const manualExamTopics = {
+                    'Checkpoint 1': ['HL1.10', 'HL1.9', 'HL2.10', 'SL1.1', 'SL1.5', 'SL1.6'],
+                    'Checkpoint 2': ['SL1.2', 'SL1.3', 'SL1.4', 'SL1.7', 'HL1.11', 'HL3.10', 'HL3.11', 'HL3.12', 'HL3.13'],
+                };
+
                 // Define the complete topic information with syllabus names and textbook links
                 const topicDetails = {
                     'HL1.10': {
@@ -2790,17 +2849,90 @@
                         name: 'Approximation; significant figures; upper & lower bounds; percentage errors; estimation',
                         book: 'Hodder SL, Chapter 11A — Approximation (pp. 280–286)',
                         link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae67bc0009f50ae3dc/files/68ae67e7001fc7234d04/view?project=68ae66cf002308df352a&mode=admin'
+                    },
+                    'SL1.2': {
+                        name: 'Applications of arithmetic sequences and simple interest calculations',
+                        book: 'Hodder SL, Chapter 2A — Arithmetic sequences and series (pp. 24–32)'
+                    },
+                    'SL1.3': {
+                        name: 'Geometric sequences and series; nth term, sigma notation, and modelling',
+                        book: 'Hodder SL, Chapter 2B — Geometric sequences and series (pp. 33–38)'
+                    },
+                    'SL1.4': {
+                        name: 'Financial modelling with geometric sequences: compound interest and depreciation',
+                        book: 'Hodder SL, Chapter 2C — Financial applications (pp. 39–42)'
+                    },
+                    'SL1.7': {
+                        name: 'Amortisation tables, annuities, and technology-assisted financial calculations',
+                        book: 'Hodder SL, Chapter 11B — Amortisation and annuities (pp. 287–291)'
+                    },
+                    'HL1.11': {
+                        name: 'Sum of infinite geometric sequences and convergence conditions',
+                        book: 'Hodder HL, Chapter 1C — Sum of infinite geometric sequences (pp. 12–14)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca228a00220432800f/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL3.10': {
+                        name: 'Vector fundamentals, components, unit vectors, and normalising techniques',
+                        book: 'Hodder HL, Chapter 2A — Vectors and scalars (pp. 32–44)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca229e001bf7605b44/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL3.11': {
+                        name: 'Vector equations of lines; intersections, parallelism, and skew lines',
+                        book: 'Hodder HL, Chapter 2B — Vector equations of lines (pp. 45–51)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22b1001dc1ba6fa4/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL3.12': {
+                        name: 'Vector and Cartesian equations of planes; line-plane and plane-plane intersections',
+                        book: 'Teacher handout — Planes in three dimensions (pp. 1–4)'
+                    },
+                    'HL3.13': {
+                        name: 'Scalar (dot) and vector (cross) products; angles, areas, torque applications',
+                        book: 'Hodder HL, Chapter 2D — Scalar and vector products (pp. 58–68)',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22df000faa3b2c5e/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL1.13': {
+                        name: 'Matrix multiplication and properties of matrix arithmetic',
+                        book: 'Hodder HL, Chapter 3A — Definition and arithmetic of matrices',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22fc002c3338a1f6/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL1.14': {
+                        name: 'Determinants, inverses, and linear systems',
+                        book: 'Hodder HL, Chapter 3B — Determinants and inverses',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca2376003dcec4b134/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL1.15': {
+                        name: 'Eigenvalues, eigenvectors, and diagonalisation of 2×2 matrices',
+                        book: 'Hodder HL, Chapter 3D — Eigenvalues and eigenvectors',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca238d003c22646667/view?project=nyc-68ae66cf002308df352a'
+                    },
+                    'HL1.16': {
+                        name: 'Matrix diagonalisation, matrix powers, and Markov chains',
+                        book: 'Hodder HL, Chapter 3D — Eigenvalues and eigenvectors',
+                        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca238d003c22646667/view?project=nyc-68ae66cf002308df352a'
                     }
                 };
 
                 // Collect syllabus codes whose lesson date is < untilDate
-                const scopeCodes = new Set();
-                document.querySelectorAll('.lesson-table tbody tr').forEach(tr => {
-                    const d = parseDate(tr.querySelector('.lesson-date')?.textContent || '');
-                    if (!d || d >= untilDate) return;
-                    const codesText = tr.querySelector('.syllabus-code')?.textContent || '';
-                    (codesText.match(/\b(?:AHL|HL|SL)\s*\d+\.\d+\b/g) || []).forEach(c => scopeCodes.add(canonical(c)));
-                });
+                const manualScope = manualExamTopics[examLabel];
+                const scopeCodes = new Set(manualScope ? manualScope.map(code => canonical(code)) : []);
+                if (!manualScope) {
+                    document.querySelectorAll('.lesson-table tbody tr').forEach(tr => {
+                        const d = parseDate(tr.querySelector('.lesson-date')?.textContent || '');
+                        if (!d || d >= untilDate) return;
+                        const codesText = tr.querySelector('.syllabus-code')?.textContent || '';
+                        (codesText.match(/\b(?:AHL|HL|SL)\s*\d+\.\d+\b/g) || []).forEach(c => scopeCodes.add(canonical(c)));
+                    });
+                }
+
+                if (assessmentSubtitleEl) {
+                    const dateText = formatDateRange(exam.start, examEnd);
+                    assessmentSubtitleEl.textContent = `Revision focus for ${examLabel} · ${dateText}.`;
+                }
+
+                if (assessmentListEl) {
+                    assessmentListEl.innerHTML = '';
+                    assessmentListEl.setAttribute('hidden', '');
+                }
 
                 // Create detailed content with syllabus names and textbook links
                 const frag = document.createDocumentFragment();
@@ -2859,8 +2991,10 @@
                                         </div>
                                     </div>
                                 `;
-                            } else {
+                            } else if (detail.link) {
                                 linkHtml = `<a href="${detail.link}" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: 600; border-bottom: 1px dotted var(--primary-green); transition: all 0.2s ease;" onmouseover="this.style.color='#059669'; this.style.borderBottomStyle='solid'" onmouseout="this.style.color='var(--primary-green)'; this.style.borderBottomStyle='dotted'">${detail.book}</a>`;
+                            } else {
+                                linkHtml = `<span style="color: var(--text-secondary); font-weight: 500;">${detail.book}</span>`;
                             }
                             li.innerHTML = `
                                 <div style="margin-bottom: 0.75rem; position: relative;">
@@ -2934,6 +3068,17 @@
                     frag.appendChild(columnsContainer);
                 }
 
+                const practiceResources = {
+                    'Checkpoint 1': {
+                        url: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin',
+                        buttonText: 'EXERCISES FOR CHECKPOINT 1',
+                        message: 'Practice exercises specifically designed for your upcoming assessment'
+                    }
+                };
+                const resource = practiceResources[examLabel];
+                const focusLabel = (examLabel || 'Upcoming Assessment').toUpperCase();
+                const fallbackMessage = `Revision materials for ${examLabel || 'this assessment'} will be shared shortly.`;
+
                 // Add exercises link section (full width below columns)
                 const exercisesSection = document.createElement('div');
                 exercisesSection.style.cssText = 'background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); border: 1px solid #fed7aa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 6px 20px rgba(217, 119, 6, 0.15);';
@@ -2946,21 +3091,28 @@
                     <div style="margin-bottom: 0.75rem; position: relative; z-index: 1;">
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(217, 119, 6, 0.1); padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem;">
                             <span style="font-size: 1.2rem;">🎯</span>
-                            <span style="font-size: 1.1rem; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 0.5px;">Assessment Preparation</span>
+                            <span style="font-size: 1.1rem; font-weight: 800; color: #d97706; text-transform: uppercase; letter-spacing: 0.5px;">Assessment Preparation · ${focusLabel}</span>
                         </div>
                     </div>
                     
-                    <a href="https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); position: relative; z-index: 1; border: 2px solid transparent;" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(217, 119, 6, 0.4)'; this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(217, 119, 6, 0.3)'; this.style.borderColor='transparent'">
-                        <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <span style="font-size: 1.2rem;">📝</span>
-                            <span>EXERCISES FOR THE CHECKPOINT 1</span>
-                        </span>
-                    </a>
+                    ${resource ? `
+                        <a href="${resource.url}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); position: relative; z-index: 1; border: 2px solid transparent;" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(217, 119, 6, 0.4)'; this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(217, 119, 6, 0.3)'; this.style.borderColor='transparent'">
+                            <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-size: 1.2rem;">📝</span>
+                                <span>${resource.buttonText}</span>
+                            </span>
+                        </a>
+                    ` : `
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center; background: rgba(217, 119, 6, 0.15); color: #92400e; padding: 0.75rem 1.5rem; border-radius: 10px; font-weight: 600; position: relative; z-index: 1;">
+                            <span style="font-size: 1.1rem;">⏳</span>
+                            <span>${fallbackMessage}</span>
+                        </div>
+                    `}
                     
                     <div style="margin-top: 1rem; font-size: 0.95rem; color: #92400e; font-style: italic; position: relative; z-index: 1;">
                         <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
                             <span>✨</span>
-                            <span>Practice exercises specifically designed for your upcoming assessment</span>
+                            <span>${resource ? resource.message : 'Keep consolidating class notes, textbook examples, and completed exercise book tasks.'}</span>
                             <span>✨</span>
                         </span>
                     </div>
@@ -2980,9 +3132,161 @@
                 examDaysEl.textContent = String(days);
                 examDateEl.textContent = formatDateRange(next.start, next.end);
                 examWindowEl.textContent = next.label;
-                collectScope(next.start);
+                collectScope(next);
                 examBanner.style.display = 'block';
             })();
+
+            if (assessmentSpotlight) {
+                assessmentSpotlight.setAttribute('aria-expanded', String(revisionDetailsEl?.open || false));
+                const toggleRevisionGuide = () => {
+                    if (!revisionDetailsEl) return;
+                    const nextState = !revisionDetailsEl.open;
+                    revisionDetailsEl.open = nextState;
+                    assessmentSpotlight.setAttribute('aria-expanded', String(nextState));
+                    if (nextState) {
+                        revisionDetailsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                };
+                assessmentSpotlight.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    toggleRevisionGuide();
+                });
+                assessmentSpotlight.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleRevisionGuide();
+                    }
+                });
+                revisionDetailsEl?.addEventListener('toggle', () => {
+                    assessmentSpotlight.setAttribute('aria-expanded', String(revisionDetailsEl.open));
+                });
+            }
+
+            function updateLessonSpotlight() {
+                if (!lessonSubtitleEl || !lessonSpotlightBody) return;
+
+                const rows = Array.from(document.querySelectorAll('.lesson-table tbody tr'));
+                const today = new Date();
+                const todayKey = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+                const normalise = (date) => new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                let todaysLesson = null;
+                let upcomingLesson = null;
+
+                rows.forEach(tr => {
+                    const dateText = tr.querySelector('.lesson-date')?.textContent || '';
+                    const parsed = parseDate(dateText);
+                    if (!parsed) return;
+                    const key = normalise(parsed);
+
+                    const slot = { tr, parsed, key };
+
+                    if (!todaysLesson && key.getTime() === todayKey.getTime()) {
+                        todaysLesson = slot;
+                    }
+                    if (key.getTime() >= todayKey.getTime()) {
+                        if (!upcomingLesson || key.getTime() < upcomingLesson.key.getTime()) {
+                            upcomingLesson = slot;
+                        }
+                    }
+                });
+
+                const chosen = todaysLesson || upcomingLesson;
+
+                if (!chosen) {
+                    lessonSubtitleEl.textContent = 'No further lessons are scheduled — use the time for thoughtful revision.';
+                    lessonSpotlightBody.innerHTML = '<p class="spotlight-empty">Enjoy a well-earned pause or revisit recent checkpoints.</p>';
+                    if (lessonJumpBtn) {
+                        lessonJumpBtn.setAttribute('hidden', '');
+                        lessonJumpBtn.onclick = null;
+                    }
+                    lessonTargetRow = null;
+                    return;
+                }
+
+                const isToday = chosen.key.getTime() === todayKey.getTime();
+                const dateOptions = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+                const displayDate = chosen.parsed.toLocaleDateString('en-GB', dateOptions);
+                const slotLabel = isToday ? 'Today' : 'Next lesson';
+
+                const periodText = chosen.tr.querySelector('td:first-child div:nth-child(2)')?.textContent?.trim() || '';
+                const topicTitleEl = chosen.tr.querySelector('.topic-title');
+                const topicContentEl = chosen.tr.querySelector('.topic-content');
+                const unitTitle = chosen.tr.closest('section.unit-section')?.querySelector('.unit-header h2')?.textContent?.trim() || '';
+                const code = topicTitleEl?.querySelector('.syllabus-code')?.textContent?.trim() || '';
+                let titleText = topicTitleEl?.textContent?.trim() || '';
+                if (code) {
+                    titleText = titleText.replace(code, '').trim();
+                }
+
+                const summaryRaw = topicContentEl?.textContent?.trim() || '';
+                const summaryText = summaryRaw.length > 220 ? `${summaryRaw.slice(0, 217)}…` : summaryRaw;
+
+                lessonSubtitleEl.textContent = `${slotLabel}: ${displayDate}${periodText ? ` · ${periodText}` : ''}`;
+
+                const fragments = [];
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'lesson-title';
+                titleDiv.textContent = titleText || 'Independent study and consolidation';
+                fragments.push(titleDiv);
+
+                const tagContainer = document.createElement('div');
+                tagContainer.className = 'lesson-tags';
+                if (code) {
+                    const tag = document.createElement('span');
+                    tag.className = 'lesson-tag';
+                    tag.textContent = code;
+                    tagContainer.appendChild(tag);
+                }
+                if (unitTitle) {
+                    const tag = document.createElement('span');
+                    tag.className = 'lesson-tag lesson-tag--unit';
+                    tag.textContent = unitTitle;
+                    tagContainer.appendChild(tag);
+                }
+                if (tagContainer.children.length) {
+                    fragments.push(tagContainer);
+                }
+
+                const metaDiv = document.createElement('div');
+                metaDiv.className = 'lesson-meta';
+                const dateLine = document.createElement('span');
+                dateLine.textContent = displayDate;
+                metaDiv.appendChild(dateLine);
+                if (periodText) {
+                    const periodLine = document.createElement('span');
+                    periodLine.textContent = periodText;
+                    metaDiv.appendChild(periodLine);
+                }
+                fragments.push(metaDiv);
+
+                if (summaryText) {
+                    const summaryPara = document.createElement('p');
+                    summaryPara.className = 'lesson-summary';
+                    summaryPara.textContent = summaryText;
+                    fragments.push(summaryPara);
+                }
+
+                lessonSpotlightBody.innerHTML = '';
+                fragments.forEach(node => lessonSpotlightBody.appendChild(node));
+
+                lessonTargetRow = chosen.tr;
+                if (lessonJumpBtn) {
+                    if (lessonTargetRow) {
+                        lessonJumpBtn.hidden = false;
+                        lessonJumpBtn.onclick = () => {
+                            lessonTargetRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            lessonTargetRow.classList.add('flash-highlight');
+                            setTimeout(() => lessonTargetRow.classList.remove('flash-highlight'), 2000);
+                        };
+                    } else {
+                        lessonJumpBtn.hidden = true;
+                        lessonJumpBtn.onclick = null;
+                    }
+                }
+            }
+
+            updateLessonSpotlight();
             const applyTemporalClasses = (schedule) => {
                 const now = new Date();
                 const startOfWeek = new Date(now); startOfWeek.setDate(now.getDate() - ((now.getDay()+6)%7)); // Monday
