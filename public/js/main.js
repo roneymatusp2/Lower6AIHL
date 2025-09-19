@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (nextExam && nextExam.label) {
             if (nextExam.label === 'Checkpoint 1') {
-                practiceLink = 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ae70fc000a9f1bcdc2/view?project=68ae66cf002308df352a&mode=admin';
+                practiceLink = 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae70d900306dd864f3/files/68ccbf220020ca8076f0/view?project=68ae66cf002308df352a&mode=admin';
                 assessmentTitle = 'EXERCISES FOR THE CHECKPOINT 1';
                 practiceMessage = 'Practice exercises specifically designed for your upcoming assessment';
             } else if (nextExam.label === 'Checkpoint 2') {

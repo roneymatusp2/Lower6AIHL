@@ -136,7 +136,7 @@ export const topicDetails = {
     'HL1.10': {
         name: 'Simplifying expressions involving rational exponents',
         book: 'Hodder HL, Chapter 1A — Laws of exponents with rational exponents (pp. 4–5)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae6793002c8385336f/view?project=68ae66cf002308df352a&mode=admin'
     },
     'HL1.9': {
         name: 'Laws of logarithms',
@@ -146,7 +146,7 @@ export const topicDetails = {
     'HL2.10': {
         name: 'Scaling and linearising data; log and semi‑log graphs',
         book: 'Hodder HL, Chapter 1D — Using logarithmic scales on graphs (pp. 15–29)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae6793002c8385336f/view?project=68ae66cf002308df352a&mode=admin'
     },
     'SL1.1': {
         name: 'Operations with numbers in the form a×10^k (1 ≤ a < 10, k ∈ ℤ)',
@@ -189,26 +189,26 @@ export const topicDetails = {
     'HL1.11': {
         name: 'Sum of infinite geometric sequences',
         book: 'Hodder HL, Chapter 1C — Sum of infinite geometric sequences (pp. 12–14)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca228a00220432800f/view?project=68ae66cf002308df352a&mode=admin'
     },
     'HL3.10': {
         name: 'Vectors and scalars: concepts and representation',
         book: 'Hodder HL, Chapter 2A — Vectors and scalars (pp. 32–41)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca229e001bf7605b44/view?project=68ae66cf002308df352a&mode=admin'
     },
     'HL3.11': {
         name: 'Vector equation of a line (2D and 3D)',
         book: 'Hodder HL, Chapter 2B — Vector equation of a line (pp. 45–51)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22b1001dc1ba6fa4/view?project=68ae66cf002308df352a&mode=admin'
     },
     'HL3.12': {
         name: 'Vector applications to kinematics',
         book: 'Hodder HL, Chapter 2C — Vector applications to kinematics (pp. 52–55)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca229e001bf7605b44/view?project=68ae66cf002308df352a&mode=admin'
     },
     'HL3.13': {
         name: 'Scalar and vector products',
         book: 'Hodder HL, Chapter 2D — Scalar and vector products (pp. 58–68)',
-        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ae67880039d7bd3bbe/view?project=68ae66cf002308df352a&mode=admin'
+        link: 'https://nyc.cloud.appwrite.io/v1/storage/buckets/68ae6757000608792fd7/files/68ca22df000faa3b2c5e/view?project=68ae66cf002308df352a&mode=admin'
     }
 };
